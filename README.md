@@ -58,11 +58,14 @@ Covering all 14 Syrian administrative districts with real-time mouse hover inter
 
 ## 📱 Mobile & Tablet Responsive Architecture / التوافق الكامل مع الجوال والأجهزة اللوحية
 The website is engineered with a modern, touch-optimized responsive layout across all device viewports (Smartphones 360px–480px, Phablets, Tablets & iPads 768px–1024px, and Ultra-Wide Desktops):
+- **Zero Horizontal Overflow Guarantee**: Strict `html, body { width: 100%; max-width: 100%; overflow-x: hidden !important; }` combined with off-canvas drawer visibility management (`visibility: hidden; pointer-events: none;`) to prevent RTL coordinate shifting or mobile pinch-zoom expansion.
+- **Responsive Clean Header**: Automatically streamlines navigation on tablets and mobile screens (<= 1024px) by hiding secondary CTA buttons and long sub-taglines, maintaining a clean crest logo, brand title, and accessible drawer trigger.
+- **Stacked Quick Booking Engine**: Dynamically shifts from a 5-column desktop form to a comfortable 2-column tablet grid and 1-column mobile layout with full-width touch-friendly dropdowns and submit button.
 - **Touch-Friendly Syria Interactive Map**: Single-column vertical layout on tablets and mobile with touch (`touchstart`/`click`) responsiveness for all 14 governorate paths and radar pins, accompanied by quick-select touch chips.
-- **Swipeable Fleet Filter Carousel**: Horizontal touch chip bar for instant vehicle category filtering without page reloads.
-- **Mobile Luxury Drawer**: Slide-in navigation drawer with language switcher, quick contact cards, and full-width proposal buttons.
+- **Swipeable Fleet Filter & Service Tabs**: Horizontal touch chips with `white-space: nowrap` for instant vehicle category and service switching without text wrapping or layout distortion.
+- **Mobile Luxury Drawer & Dimmed Backdrop**: Smooth animated slide-in drawer with dedicated blur overlay backdrop, body scroll locking, language switcher, quick contacts, and full-width proposal buttons.
 - **Sticky Quick-Action Mobile Bar**: 1-tap direct access to WhatsApp chat, direct phone dialer, and RFP proposal modal pinned to the bottom of mobile screens.
-- **Fluid Typography & Touch Inputs**: 16px form control typography to prevent auto-zooming on mobile iOS Safari and Android Chrome, with adaptive hero font clamp.
+- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=3.2`) ensuring mobile devices immediately receive the latest responsive design system.
 
 ---
 

@@ -75,10 +75,15 @@ html {
   font-family: var(--font-en-sans);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100%;
   background-color: var(--bg-primary);
   color: var(--text-secondary);
   line-height: 1.65;
@@ -620,11 +625,20 @@ html[dir="rtl"] .hero-title {
   border-bottom: 1px solid var(--border-subtle);
   padding-bottom: 16px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  width: 100%;
+  max-width: 100%;
+  flex-wrap: nowrap;
+}
+
+.booking-services-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .service-tab-btn {
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   color: var(--text-muted);
   font-size: 0.95rem;
   font-weight: 600;
@@ -635,6 +649,8 @@ html[dir="rtl"] .hero-title {
   align-items: center;
   gap: 8px;
   transition: all var(--transition-fast);
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 .service-tab-btn.active, .service-tab-btn:hover {
@@ -728,7 +744,7 @@ html[dir="rtl"] .hero-title {
 
 .fleet-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   gap: 32px;
 }
 
@@ -1675,6 +1691,29 @@ html[dir="rtl"] .modal-close-btn {
   gap: 16px;
 }
 
+/* Drawer Backdrop Overlay */
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 /* ===================================================================
    Mobile Nav Drawer & Floating Quick Bar
    =================================================================== */
@@ -1682,8 +1721,8 @@ html[dir="rtl"] .modal-close-btn {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  max-width: 380px;
+  width: 85%;
+  max-width: 340px;
   height: 100%;
   background: rgba(10, 13, 19, 0.98);
   backdrop-filter: blur(30px);
@@ -1694,7 +1733,9 @@ html[dir="rtl"] .modal-close-btn {
   flex-direction: column;
   padding: 24px 20px;
   transform: translateX(-100%);
-  transition: transform var(--transition-smooth);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform var(--transition-smooth), visibility var(--transition-smooth);
   overflow-y: auto;
   box-shadow: 10px 0 35px rgba(0, 0, 0, 0.8);
 }
@@ -1709,7 +1750,9 @@ html[dir="rtl"] .mobile-drawer {
 }
 
 .mobile-drawer.open {
-  transform: translateX(0);
+  transform: translateX(0) !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 .mobile-drawer-header {
@@ -1876,8 +1919,14 @@ html[dir="rtl"] .mobile-drawer {
   .nav-menu {
     display: none;
   }
+  .nav-actions .btn,
+  .nav-actions .btn-gold,
+  .nav-actions .btn-sm,
+  .nav-actions .trigger-modal {
+    display: none !important;
+  }
   .mobile-menu-btn {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     width: 44px;
@@ -1911,13 +1960,16 @@ html[dir="rtl"] .mobile-drawer {
     padding: 24px 20px;
   }
   .booking-form-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
   }
-  .booking-form-grid .btn {
-    grid-column: span 2;
-    width: 100%;
-    height: 48px;
+  .booking-form-grid > .form-group:last-child {
+    grid-column: span 2 !important;
+    width: 100% !important;
+  }
+  .booking-form-grid > .form-group:last-child .btn {
+    width: 100% !important;
+    height: 48px !important;
   }
   .fleet-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1964,72 +2016,92 @@ html[dir="rtl"] .mobile-drawer {
     display: flex;
   }
   .top-bar-left {
-    display: none;
+    display: none !important;
   }
   .top-bar-inner {
     justify-content: center;
     padding: 6px 0;
   }
   .nav-container {
-    height: 70px;
+    height: 64px;
+    padding: 0 16px;
+    justify-content: space-between;
   }
-  .nav-actions .btn-sm {
-    display: none;
+  .nav-actions {
+    gap: 0;
+  }
+  .nav-actions .btn,
+  .nav-actions .btn-gold,
+  .nav-actions .btn-sm,
+  .nav-actions .trigger-modal {
+    display: none !important;
   }
   .brand-logo {
     gap: 10px;
+    flex-shrink: 1;
+    min-width: 0;
   }
   .logo-crest-img {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
   }
   .brand-name {
     font-size: 1.25rem;
+    line-height: 1.1;
   }
   .brand-tagline {
-    font-size: 0.58rem;
-    letter-spacing: 0.12em;
+    display: none !important;
+  }
+  .mobile-menu-btn {
+    display: flex !important;
+    width: 42px;
+    height: 42px;
   }
   .hero-section {
-    padding: 50px 0 60px;
+    padding: 40px 0 50px;
   }
   .hero-badge {
     font-size: 0.78rem;
     padding: 6px 14px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
+    display: inline-flex;
+    max-width: 100%;
   }
   .hero-title {
-    font-size: 2.05rem;
-    line-height: 1.3;
-    margin-bottom: 18px;
+    font-size: 1.95rem;
+    line-height: 1.35;
+    margin-bottom: 16px;
+    word-break: break-word;
   }
   html[lang="ar"] .hero-title,
   html[dir="rtl"] .hero-title {
-    font-size: 1.95rem;
+    font-size: 1.85rem;
     line-height: 1.45;
   }
   .hero-description {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     line-height: 1.65;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
   .hero-cta-group {
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
-    margin-bottom: 36px;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+    margin-bottom: 30px !important;
   }
   .hero-cta-group .btn {
-    width: 100%;
-    height: 48px;
+    width: 100% !important;
+    height: 48px !important;
   }
   .hero-metrics {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    padding-top: 24px;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+    padding-top: 20px !important;
+    width: 100% !important;
   }
   .hero-metrics .metric-item:last-child {
-    grid-column: span 2;
+    grid-column: span 2 !important;
   }
   .metric-number {
     font-size: 1.85rem;
@@ -2038,44 +2110,48 @@ html[dir="rtl"] .mobile-drawer {
     font-size: 0.78rem;
   }
   .section-padding {
-    padding: 60px 0;
+    padding: 50px 0;
   }
   .section-header {
-    margin-bottom: 36px;
+    margin-bottom: 32px;
   }
   .section-title {
-    font-size: 2.0rem;
-    margin-bottom: 14px;
+    font-size: 1.9rem;
+    margin-bottom: 12px;
   }
   .section-subtitle {
-    font-size: 0.94rem;
+    font-size: 0.92rem;
     line-height: 1.65;
   }
   .booking-bar-wrapper {
     margin-top: 0;
-    padding-top: 20px;
+    padding-top: 15px;
   }
   .booking-card {
     padding: 20px 16px;
   }
   .booking-services-tabs {
     gap: 8px;
-    padding-bottom: 12px;
+    padding-bottom: 10px;
   }
   .service-tab-btn {
-    padding: 6px 14px;
-    font-size: 0.84rem;
-    white-space: nowrap;
-    flex-shrink: 0;
+    padding: 7px 14px !important;
+    font-size: 0.82rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
   .booking-form-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .booking-form-grid > .form-group {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
   }
   .booking-form-grid .btn {
-    grid-column: span 1;
-    width: 100%;
-    height: 48px;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    height: 48px !important;
   }
   /* Fleet Section Mobile */
   .fleet-filter-bar {
