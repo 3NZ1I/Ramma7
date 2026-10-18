@@ -1,12 +1,47 @@
-# Rammah Travel - Enterprise, INGO & Government Fleet Contracting (Syria)
-# شركة رماح ترافيل لعقود وتشغيل أساطيل السيارات للمنظمات والشركات - سوريا
+# Rammah Travel - Fleet & Truck Contracting Across Syria
+# شركة رماح ترافيل لعقود وتشغيل أساطيل المركبات والشاحنات للمنظمات والشركات - سوريا
 
 ![Rammah Travel Fleet](assets/images/hero.jpg)
 
 ## 🌟 Overview / نظرة عامة
-**Rammah Travel** is Syria's premier fleet contracting enterprise, specializing in tailored long-term and medium-term vehicle leasing and turnkey fleet management for **Humanitarian Organizations (INGOs & NGOs)**, **Private Enterprises**, and **Government Entities**.
+**Rammah Travel** is Syria's premier fleet and logistics truck contracting enterprise, providing turnkey vehicle leasing and operational fleet management across all **14 Syrian Governorates** for **Humanitarian Organizations (INGOs & NGOs)**, **Private Enterprises**, and **Government Entities**.
 
-### 🤝 Current Trusted Partners / شركاؤنا
+---
+
+## 🗺️ Interactive Syria Map (14 Governorates in Gold & Green) / خارطة سوريا التفاعلية
+Covering all 14 Syrian administrative districts with real-time mouse hover interaction, glowing radar pulse pins in gold (`#d4af37`) and emerald green (`#10b981`), live operational tooltips, and an integrated deployment dashboard:
+1. **دمشق (Damascus)** — Central Administrative HQ & Airport VIP Depot
+2. **ريف دمشق (Rural Damascus)** — Industrial Zones & Regional Corridors
+3. **حلب (Aleppo)** — Northern Humanitarian & Commercial Hub
+4. **حمص (Homs)** — Central Cross-Governorate Logistics Junction
+5. **حماة (Hama)** — Agricultural & Field Mission Transit
+6. **اللاذقية (Latakia)** — Maritime Seaport Logistics & Coastal Hub
+7. **طرطوس (Tartus)** — Maritime Trade Freight & Seaside Operations
+8. **إدلب (Idlib)** — Humanitarian Relief Fleets & Medical Distribution
+9. **درعا (Daraa)** — Southern Border & Agricultural Transport
+10. **السويداء (As-Suwayda)** — Mountain-Ready 4WD & Community Transport
+11. **القنيطرة (Quneitra)** — Rural Assessment & Field Mission Support
+12. **دير الزور (Deir ez-Zor)** — Eastern Convoys & Heavy Carrier Freight
+13. **الرقة (Raqqa)** — Euphrates Recovery Logistics & Food Distribution
+14. **الحسكة (Al-Hasakah)** — Northeastern Agricultural & Heavy Logistics Hub
+
+---
+
+## 🚛 Fleet & Logistics Trucks / أسطول المركبات وشاحنات النقل
+1. **Hyundai H-1 Passenger Vans (فانات هيونداي H-1)**:
+   - 9 to 12 seats, top choice for humanitarian missions, field staff, and delegations.
+2. **Hyundai Santa Fe (هيونداي سنتافيه طراز CM والحديث 4x4)**:
+   - Mid-size AWD / 4x4 SUV built for tough road conditions and executive field operations.
+3. **Hyundai Porter Light Cargo Truck (شاحنة هيونداي بورتر)**:
+   - 1.5 to 2.0-ton payload with closed cargo box, flatbed, or refrigerated options for relief aid distribution and urban logistics.
+4. **Hyundai Mighty Heavy Carrier Truck (شاحنة هيونداي مايتي)**:
+   - 3.5 to 5.5-ton payload with heavy-duty chassis for long-distance intercity transit, heavy freight, and humanitarian aid convoys.
+5. **Hyundai Corporate Sedans (هيونداي سيدان - إلنترا / سوناتا / أكسنت)**:
+   - High-efficiency corporate sedans for daily urban mobility and administrative staff.
+
+---
+
+## 🤝 Trusted Partners / شركاؤنا
 - **[World Vision International](https://www.wvi.org/)** (International Humanitarian INGO)
 - **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** (Government Entity)
 - **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** (Humanitarian Relief Organization)
@@ -14,33 +49,12 @@
 
 ---
 
-## 🚗 Operational Hyundai Fleet / أسطول هيونداي
-1. **Hyundai H-1 Passenger Vans (فانات هيونداي H-1)**:
-   - 9 to 12-passenger capacity, optimal for humanitarian teams, field missions, and delegation transport.
-2. **Hyundai Santa Fe (هيونداي سنتافيه طراز CM والحديث)**:
-   - AWD / 4x4 rugged reliability for rough terrain, intercity highways, and executive field operations.
-3. **Hyundai Corporate Sedans (هيونداي سيدان - إلنترا / سوناتا / أكسنت)**:
-   - Fuel-efficient, dependable administrative and daily operational mobility across all Syrian cities.
-
----
-
-## 📋 Flexible Contract Options / مرونة التعاقد
-- **With Drivers**: Professional, certified drivers with thorough background vetting, defense training, and deep familiarity with Syrian roads.
-- **Without Drivers (Self-Managed)**: Vehicles handed over for organizational direct use.
-- **Duration Options**: Monthly, annual renewable, and grant/project-specific timelines.
-- **Support & SLA**: 24/7 technical assistance, routine preventative maintenance, and immediate vehicle replacement anywhere in Syria.
-
----
-
 ## 📞 Contact Information / معلومات التواصل
 - **Email**: [info@rammah-trvl.com](mailto:info@rammah-trvl.com)
 - **Phone / WhatsApp**: [+90 535 251 24 48](https://wa.me/905352512448)
-- **Headquarters & Operations**: Damascus, Aleppo, Latakia, Tartus, Homs & Nationwide Coverage.
+- **Operating Centers**: Damascus, Aleppo, Coast & All 14 Syrian Governorates.
 
 ---
 
-## 🔑 Git & SSH Configuration
-An SSH key pair has been generated for GitHub:
-- Public Key Path: `~/.ssh/id_ed25519_rammah.pub`
-- Private Key Path: `~/.ssh/id_ed25519_rammah`
-- Host config registered in `~/.ssh/config`
+## 🔑 GitHub SSH Key
+- Public Key Path: `~/.ssh/id_ed25519_rammah.pub` (also saved as [`github_ssh_key.pub`](file:///c:/Rammah/github_ssh_key.pub))

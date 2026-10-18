@@ -1126,8 +1126,301 @@ html[dir="rtl"] .fleet-rate-badge {
 /* ===================================================================
    Syria Coverage Map / Hubs
    =================================================================== */
-.coverage-section {
+/* ===================================================================
+   Interactive Syria Map (14 Governorates in Gold & Emerald Green)
+   =================================================================== */
+.syria-interactive-section {
   position: relative;
+  background: radial-gradient(circle at 50% 40%, rgba(16, 185, 129, 0.04) 0%, rgba(212, 175, 55, 0.05) 50%, var(--bg-primary) 100%);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.map-layout-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.map-canvas-card {
+  background: rgba(11, 14, 20, 0.85);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  position: relative;
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(16, 185, 129, 0.08);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+.map-legend-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.84rem;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+.legend-dot-green {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+}
+
+.legend-dot-gold {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold-primary);
+  box-shadow: 0 0 10px var(--gold-primary);
+}
+
+.syria-svg-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.syria-map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.8));
+}
+
+/* Governorate Path Styles (Gold & Emerald Green theme) */
+.gov-path {
+  fill: #121722;
+  stroke: rgba(212, 175, 55, 0.4);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.gov-path:hover, .gov-path.active {
+  fill: url(#goldEmeraldGradient) !important;
+  stroke: #10b981;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 16px rgba(16, 185, 129, 0.7));
+}
+
+/* Radar Pulse Pins */
+.gov-pin {
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.gov-pin:hover, .gov-pin.active {
+  transform: scale(1.35);
+}
+
+.pin-core {
+  fill: #10b981;
+  stroke: #ffffff;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 8px #10b981);
+}
+
+.pin-pulse {
+  fill: none;
+  stroke: var(--gold-primary);
+  stroke-width: 1.8;
+  opacity: 0.8;
+  transform-origin: center;
+  animation: radar-ping 2.5s infinite ease-out;
+}
+
+.pin-text {
+  fill: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-anchor: middle;
+  pointer-events: none;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+@keyframes radar-ping {
+  0% {
+    r: 6px;
+    opacity: 0.9;
+    stroke: #10b981;
+  }
+  50% {
+    stroke: var(--gold-primary);
+  }
+  100% {
+    r: 24px;
+    opacity: 0;
+  }
+}
+
+/* Floating Hover Tooltip */
+.map-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(10, 14, 20, 0.95);
+  border: 1px solid var(--gold-primary);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-md), 0 0 15px rgba(16, 185, 129, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 50;
+  display: none;
+  transform: translate(-50%, -125%);
+  white-space: nowrap;
+}
+
+.map-tooltip-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+html[dir="rtl"] .map-tooltip-badge {
+  margin-right: 0;
+  margin-left: 6px;
+}
+
+/* Governorates Quick Select Tags */
+.gov-pills-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.gov-pill-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gov-pill-btn:hover, .gov-pill-btn.active {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: #10b981;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Operations Dashboard Card (Right Column) */
+.map-dashboard-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+  box-shadow: var(--shadow-lg), var(--gold-glow);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hub-status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.active-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #10b981;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.active-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-dot 1.8s infinite ease-in-out;
+}
+
+.dashboard-gov-name {
+  font-size: 1.85rem;
+  color: #ffffff;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.dashboard-gov-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.dashboard-metrics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+  background: rgba(8, 10, 14, 0.6);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.86rem;
+}
+
+.metric-row-label {
+  color: var(--text-muted);
+}
+
+.metric-row-val {
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .map-layout-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .hubs-grid {
