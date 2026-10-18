@@ -1205,10 +1205,11 @@ html[dir="rtl"] .fleet-rate-badge {
 
 /* Governorate Path Styles (Gold & Emerald Green theme) */
 .gov-path {
-  fill: #121722;
-  stroke: rgba(212, 175, 55, 0.4);
-  stroke-width: 1.5;
+  fill: #111622;
+  stroke: rgba(212, 175, 55, 0.45);
+  stroke-width: 1.2;
   stroke-linejoin: round;
+  stroke-linecap: round;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
@@ -1216,7 +1217,7 @@ html[dir="rtl"] .fleet-rate-badge {
 .gov-path:hover, .gov-path.active {
   fill: url(#goldEmeraldGradient) !important;
   stroke: #10b981;
-  stroke-width: 2.5;
+  stroke-width: 2.2;
   filter: drop-shadow(0 0 16px rgba(16, 185, 129, 0.7));
 }
 
@@ -1227,45 +1228,58 @@ html[dir="rtl"] .fleet-rate-badge {
 }
 
 .gov-pin:hover, .gov-pin.active {
-  transform: scale(1.35);
+  transform: scale(1.15);
 }
 
 .pin-core {
   fill: #10b981;
   stroke: #ffffff;
-  stroke-width: 2;
-  filter: drop-shadow(0 0 8px #10b981);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 6px #10b981);
+}
+
+.gov-pin.active .pin-core {
+  fill: var(--gold-primary);
+  stroke: #ffffff;
+  filter: drop-shadow(0 0 8px var(--gold-primary));
 }
 
 .pin-pulse {
   fill: none;
   stroke: var(--gold-primary);
-  stroke-width: 1.8;
+  stroke-width: 1.4;
   opacity: 0.8;
   transform-origin: center;
   animation: radar-ping 2.5s infinite ease-out;
 }
 
 .pin-text {
-  fill: #ffffff;
-  font-size: 13px;
+  fill: #f3f4f6;
+  font-size: 11px;
   font-weight: 700;
   text-anchor: middle;
   pointer-events: none;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 6px rgba(0, 0, 0, 0.9);
+  font-family: inherit;
+}
+
+.gov-pin.active .pin-text {
+  fill: var(--gold-light);
+  font-weight: 800;
+  filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.8));
 }
 
 @keyframes radar-ping {
   0% {
-    r: 6px;
-    opacity: 0.9;
+    r: 4px;
+    opacity: 0.95;
     stroke: #10b981;
   }
   50% {
     stroke: var(--gold-primary);
   }
   100% {
-    r: 24px;
+    r: 18px;
     opacity: 0;
   }
 }

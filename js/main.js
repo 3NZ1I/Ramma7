@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Central Administrative Headquarters, Airport VIP Depot, Diplomatic Quarter, and primary maintenance facility.',
       fleetAr: 'فانات H-1، سنتافيه 4WD، شاحنات بورتر ومايتي، وسيدان',
       fleetEn: 'H-1 Vans, Santa Fe 4WD, Porter & Mighty Trucks, Sedans',
-      response: '< 30 Min'
+      responseAr: 'أقل من 30 دقيقة',
+      responseEn: '< 30 Min'
     },
     'rifdimashq': {
       nameAr: 'ريف دمشق',
@@ -39,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Extensive industrial zone coverage (Adra), logistical transport depots, and regional field project corridors.',
       fleetAr: 'شاحنات نقل بضائع مايتي، فانات كوادر، وسيارات دفع رباعي',
       fleetEn: 'Mighty Freight Trucks, Crew Vans, 4WD SUVs',
-      response: '< 40 Min'
+      responseAr: 'أقل من 40 دقيقة',
+      responseEn: '< 40 Min'
     },
     'aleppo': {
       nameAr: 'حلب',
@@ -48,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Northern operations hub serving humanitarian response agencies, trade delegations, and Sheikh Najjar industrial zone.',
       fleetAr: 'أسطول فانات H-1 للمنظمات، شاحنات نقل ثقيل، وسنتافيه 4WD',
       fleetEn: 'INGO H-1 Vans, Heavy Logistics Trucks, Santa Fe 4WD',
-      response: '< 35 Min'
+      responseAr: 'أقل من 35 دقيقة',
+      responseEn: '< 35 Min'
     },
     'homs': {
       nameAr: 'حمص',
@@ -57,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Strategic central transit node connecting North, South, and Coast with rapid technical support backup.',
       fleetAr: 'شاحنات قوافل مايتي، فانات نقل جماعي، وسيارات دفع رباعي',
       fleetEn: 'Mighty Convoy Trucks, Passenger Vans, 4WD Field Units',
-      response: '< 30 Min'
+      responseAr: 'أقل من 30 دقيقة',
+      responseEn: '< 30 Min'
     },
     'hama': {
       nameAr: 'حماة',
@@ -66,7 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Agricultural and developmental transport lines, field teams transit, and scheduled fleet maintenance.',
       fleetAr: 'فانات نقل كوادر، شاحنات توزيع بورتر، وسيارات ميدانية',
       fleetEn: 'Staff Vans, Porter Distribution Trucks, Field Cars',
-      response: '< 45 Min'
+      responseAr: 'أقل من 45 دقيقة',
+      responseEn: '< 45 Min'
     },
     'latakia': {
       nameAr: 'اللاذقية',
@@ -75,7 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Primary maritime seaport hub, coastal humanitarian logistics, port cargo transfers, and executive travel.',
       fleetAr: 'شاحنات شحن وتفريغ، فانات H-1، وسيارات دفع رباعي وسيدان',
       fleetEn: 'Port Freight Trucks, H-1 Vans, 4WD SUVs & Sedans',
-      response: '< 35 Min'
+      responseAr: 'أقل من 35 دقيقة',
+      responseEn: '< 35 Min'
     },
     'tartus': {
       nameAr: 'طرطوس',
@@ -84,7 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Maritime port logistics, commercial freight, seaside humanitarian projects, and coastal transport.',
       fleetAr: 'شاحنات نقل بضائع مايتي، شاحنات بورتر مبردة، وفانات',
       fleetEn: 'Mighty Cargo Trucks, Porter Refrig Trucks, Vans',
-      response: '< 35 Min'
+      responseAr: 'أقل من 35 دقيقة',
+      responseEn: '< 35 Min'
     },
     'idlib': {
       nameAr: 'إدلب',
@@ -93,7 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Dedicated humanitarian relief fleets, mobile clinic logistics, and supply distribution convoys.',
       fleetAr: 'فانات مهام إنسانية H-1، شاحنات بورتر، وسنتافيه 4WD',
       fleetEn: 'Humanitarian H-1 Vans, Porter Trucks, Santa Fe 4WD',
-      response: '< 45 Min'
+      responseAr: 'أقل من 45 دقيقة',
+      responseEn: '< 45 Min'
     },
     'daraa': {
       nameAr: 'درعا',
@@ -102,7 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Southern corridor operations, border logistics support, agricultural transport, and INGO field staff.',
       fleetAr: 'فانات ركاب، شاحنات نقل خفيف بورتر، وسيارات ميدانية',
       fleetEn: 'Passenger Vans, Porter Light Trucks, Field 4WD',
-      response: '< 40 Min'
+      responseAr: 'أقل من 40 دقيقة',
+      responseEn: '< 40 Min'
     },
     'suwayda': {
       nameAr: 'السويداء',
@@ -111,7 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Southern executive mobility, community relief transport, and dependable 4WD field supply lines.',
       fleetAr: 'سنتافيه 4WD جبلية، فانات H-1، وشاحنات توزيع بورتر',
       fleetEn: 'Mountain-ready Santa Fe 4WD, H-1 Vans, Porter Trucks',
-      response: '< 45 Min'
+      responseAr: 'أقل من 45 دقيقة',
+      responseEn: '< 45 Min'
     },
     'quneitra': {
       nameAr: 'القنيطرة',
@@ -120,7 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Southwestern terrain transit, specialized rural development transport, and reliable 4WD support.',
       fleetAr: 'سيارات دفع رباعي سنتافيه، فانات كوادر، وشاحنات خفيفة',
       fleetEn: 'Santa Fe 4WD SUVs, Field Vans, Light Trucks',
-      response: '< 45 Min'
+      responseAr: 'أقل من 45 دقيقة',
+      responseEn: '< 45 Min'
     },
     'deirezzor': {
       nameAr: 'دير الزور',
@@ -129,7 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Eastern regional logistics, long-haul supply convoys, energy sector transport, and relief missions.',
       fleetAr: 'شاحنات مايتي حمولة ثقيلة، سيارات دفع رباعي مجهزة، وفانات',
       fleetEn: 'Heavy Duty Mighty Trucks, Equipped 4WDs, Vans',
-      response: '< 50 Min'
+      responseAr: 'أقل من 50 دقيقة',
+      responseEn: '< 50 Min'
     },
     'raqqa': {
       nameAr: 'الرقة',
@@ -138,7 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Euphrates corridor humanitarian logistics, food security transport, and community recovery projects.',
       fleetAr: 'شاحنات نقل إغاثي بورتر ومايتي، فانات H-1، وسنتافيه',
       fleetEn: 'Porter & Mighty Relief Trucks, H-1 Vans, Santa Fe',
-      response: '< 45 Min'
+      responseAr: 'أقل من 45 دقيقة',
+      responseEn: '< 45 Min'
     },
     'hasakah': {
       nameAr: 'الحسكة',
@@ -147,7 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
       descEn: 'Northeastern agricultural hub, INGO field operations, cross-governorate freight, and heavy carrier lines.',
       fleetAr: 'شاحنات مايتي قوافل، شاحنات بورتر، وسنتافيه 4WD',
       fleetEn: 'Mighty Convoy Trucks, Porter Trucks, Santa Fe 4WD',
-      response: '< 50 Min'
+      responseAr: 'أقل من 50 دقيقة',
+      responseEn: '< 50 Min'
     }
   };
 
@@ -303,7 +317,11 @@ document.addEventListener('DOMContentLoaded', () => {
       dashFleetVal.textContent = (currentLang === 'ar') ? g.fleetAr : g.fleetEn;
     }
     if (dashResponseVal) {
-      dashResponseVal.textContent = g.response;
+      if (currentLang === 'ar') {
+        dashResponseVal.textContent = g.responseAr || 'أقل من 30 دقيقة';
+      } else {
+        dashResponseVal.innerHTML = `<span dir="ltr">${g.responseEn || '< 30 Min'}</span>`;
+      }
     }
 
     // Highlight map elements
