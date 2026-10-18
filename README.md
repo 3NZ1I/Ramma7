@@ -56,5 +56,18 @@ Covering all 14 Syrian administrative districts with real-time mouse hover inter
 
 ---
 
-## 🔑 GitHub SSH Key
-- Public Key Path: `~/.ssh/id_ed25519_rammah.pub` (also saved as [`github_ssh_key.pub`](file:///c:/Rammah/github_ssh_key.pub))
+## 📱 Mobile & Tablet Responsive Architecture / التوافق الكامل مع الجوال والأجهزة اللوحية
+The website is engineered with a modern, touch-optimized responsive layout across all device viewports (Smartphones 360px–480px, Phablets, Tablets & iPads 768px–1024px, and Ultra-Wide Desktops):
+- **Touch-Friendly Syria Interactive Map**: Single-column vertical layout on tablets and mobile with touch (`touchstart`/`click`) responsiveness for all 14 governorate paths and radar pins, accompanied by quick-select touch chips.
+- **Swipeable Fleet Filter Carousel**: Horizontal touch chip bar for instant vehicle category filtering without page reloads.
+- **Mobile Luxury Drawer**: Slide-in navigation drawer with language switcher, quick contact cards, and full-width proposal buttons.
+- **Sticky Quick-Action Mobile Bar**: 1-tap direct access to WhatsApp chat, direct phone dialer, and RFP proposal modal pinned to the bottom of mobile screens.
+- **Fluid Typography & Touch Inputs**: 16px form control typography to prevent auto-zooming on mobile iOS Safari and Android Chrome, with adaptive hero font clamp.
+
+---
+
+## 🔑 GitHub SSH Key & Domain Configuration
+- **Public SSH Key**: `~/.ssh/id_ed25519_rammah.pub` (also saved as [`github_ssh_key.pub`](file:///c:/Rammah/github_ssh_key.pub))
+- **Remote Repository**: [`git@github.com:3NZ1I/Ramma7.git`](https://github.com/3NZ1I/Ramma7) (branch `main`)
+- **Custom Domain**: Managed via [`CNAME`](file:///c:/Rammah/CNAME)
+

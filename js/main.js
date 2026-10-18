@@ -221,6 +221,12 @@ document.addEventListener('DOMContentLoaded', () => {
         ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> English` 
         : `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> العربية`;
     }
+    const drawerLangToggle = document.getElementById('drawerLangToggle');
+    if (drawerLangToggle) {
+      drawerLangToggle.innerHTML = (lang === 'ar')
+        ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> English`
+        : `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> العربية`;
+    }
 
     // Refresh Map Dashboard Display with current language
     updateGovernorateDisplay(activeGovernorateKey);
@@ -229,6 +235,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Language Toggle Event
   if (langToggleBtn) {
     langToggleBtn.addEventListener('click', () => {
+      const newLang = (currentLang === 'ar') ? 'en' : 'ar';
+      applyLanguage(newLang);
+    });
+  }
+  const drawerLangToggle = document.getElementById('drawerLangToggle');
+  if (drawerLangToggle) {
+    drawerLangToggle.addEventListener('click', () => {
       const newLang = (currentLang === 'ar') ? 'en' : 'ar';
       applyLanguage(newLang);
     });
@@ -245,7 +258,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile Menu Drawer
   if (mobileMenuBtn && mobileDrawer && closeDrawerBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       mobileDrawer.classList.add('open');
     });
 
@@ -257,6 +271,20 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         mobileDrawer.classList.remove('open');
       });
+    });
+
+    document.querySelectorAll('.mobile-drawer .trigger-modal').forEach(btn => {
+      btn.addEventListener('click', () => {
+        mobileDrawer.classList.remove('open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (mobileDrawer.classList.contains('open') && 
+          !mobileDrawer.contains(e.target) && 
+          !mobileMenuBtn.contains(e.target)) {
+        mobileDrawer.classList.remove('open');
+      }
     });
   }
 
@@ -379,6 +407,11 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('click', () => {
       updateGovernorateDisplay(govKey);
     });
+
+    // Mobile touch support
+    el.addEventListener('touchstart', (e) => {
+      updateGovernorateDisplay(govKey);
+    }, { passive: true });
   });
 
   // Governorates Quick Select Pills

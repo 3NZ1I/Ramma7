@@ -234,8 +234,13 @@ const translations = {
     footerColServices: "Contracting Services",
     footerColContact: "Contact & Inquiries",
     footerAddress: "Damascus, Syrian Arab Republic • Operating Hubs Across All 14 Governorates",
-    footerHours: "Commercial Desk: Sat - Thu (8:00 AM - 6:00 PM) • 24/7 Field Emergency Line",
-    footerCopyright: "© 2026 Rammah Travel Co. All rights reserved. Specialized Enterprise & INGO Vehicle Contracting in Syria."
+    footerCopyright: "© 2026 Rammah Travel Co. All rights reserved. Specialized Enterprise & INGO Vehicle Contracting in Syria.",
+
+    // Mobile Quick Bar
+    quickBarWhatsapp: "WhatsApp",
+    quickBarCall: "Call Now",
+    quickBarRfp: "Request RFP",
+    mobileDrawerContactHeading: "Direct Contracting Inquiries"
   },
 
   ar: {
@@ -467,8 +472,13 @@ const translations = {
     footerColServices: "خدمات التعاقد",
     footerColContact: "التواصل والاستفسارات",
     footerAddress: "دمشق، الجمهورية العربية السورية • مراكز تشغيل تغطي كافة المحافظات الـ 14",
-    footerHours: "قسم العقود: السبت - الخميس (8:00 صباحاً - 6:00 مساءً) • خط طوارئ الأسطول 24/7",
-    footerCopyright: "© 2026 شركة رماح ترافيل. جميع الحقوق محفوظة. عقود وتشغيل أساطيل المركبات والشاحنات في سوريا."
+    footerCopyright: "© 2026 شركة رماح ترافيل. جميع الحقوق محفوظة. عقود وتشغيل أساطيل المركبات والشاحنات في سوريا.",
+
+    // Mobile Quick Bar
+    quickBarWhatsapp: "واتساب مباشر",
+    quickBarCall: "اتصال هاتفي",
+    quickBarRfp: "طلب تعاقد",
+    mobileDrawerContactHeading: "استفسارات التعاقد المباشر"
   }
 };
 
