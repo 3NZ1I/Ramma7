@@ -1,57 +1,46 @@
-# Rammah Travel - Ultra Luxury Car Rental & VIP Enterprise Mobility (Syria)
-# شركة رماح ترافيل لتأجير السيارات الفارهة وخدمات رجال الأعمال والوفود - سوريا
+# Rammah Travel - Enterprise, INGO & Government Fleet Contracting (Syria)
+# شركة رماح ترافيل لعقود وتشغيل أساطيل السيارات للمنظمات والشركات - سوريا
 
-![Rammah Travel Banner](assets/images/hero.jpg)
+![Rammah Travel Fleet](assets/images/hero.jpg)
 
 ## 🌟 Overview / نظرة عامة
-**Rammah Travel** is a bespoke, enterprise-grade web application for Syria's premier luxury car rental company. Catering to diplomatic delegations, multinational corporations, embassies, and elite travelers across Damascus, Aleppo, Latakia, Tartus, and Homs.
+**Rammah Travel** is Syria's premier fleet contracting enterprise, specializing in tailored long-term and medium-term vehicle leasing and turnkey fleet management for **Humanitarian Organizations (INGOs & NGOs)**, **Private Enterprises**, and **Government Entities**.
+
+### 🤝 Current Trusted Partners / شركاؤنا
+- **[World Vision International](https://www.wvi.org/)** (International Humanitarian INGO)
+- **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** (Government Entity)
+- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** (Humanitarian Relief Organization)
+- **[منظمة بهار (Bahar Organization)](https://bahar.ngo/)** (Humanitarian & Relief NGO)
 
 ---
 
-## ✨ Key Features / المميزات الرئيسية
-- **Ultra-Luxury Aesthetics**: Sleek obsidian dark palette (`#07080a`), brushed champagne gold metallic accents (`#d4af37`), glassmorphism, and smooth micro-animations.
-- **Bilingual & Bidirectional Support**: Seamless one-click toggle between **العربية (RTL)** and **English (LTR)** with authentic Syrian diplomatic and corporate terminology.
-- **Live Multi-Currency Conversion**: Instant toggle between **USD ($)** and **Syrian Pound (ل.س)**.
-- **Syrian Nationwide Hubs**: Tailored for key hubs including Damascus Airport (DAM VIP Terminal), Al-Mazzeh Diplomatic Quarter, Four Seasons Hotel, Aleppo, Latakia, Tartus, and Homs.
-- **Interactive Fleet Showcase**: High-resolution photography of flagship vehicles:
-  - *Mercedes-Maybach S680* (V12 BiTurbo Executive Lounge)
-  - *Range Rover Autobiography LWB* (Commanding Presence)
-  - *Cadillac Escalade Sport Platinum ESV* (Diplomatic & Security Escort)
-  - *Mercedes-Benz V-Class Maybach VIP* (Private Jet on Wheels)
-- **VIP Chauffeur & Armored Escort Standards**: Protocols for certified, multilingual, defensive-trained drivers and B6/B7 armoring tiers.
-- **Direct Concierge WhatsApp Dispatch**: Generates an executive reservation message pre-formatted with chosen vehicle, duration, airport reception, and security add-ons.
+## 🚗 Operational Hyundai Fleet / أسطول هيونداي
+1. **Hyundai H-1 Passenger Vans (فانات هيونداي H-1)**:
+   - 9 to 12-passenger capacity, optimal for humanitarian teams, field missions, and delegation transport.
+2. **Hyundai Santa Fe (هيونداي سنتافيه طراز CM والحديث)**:
+   - AWD / 4x4 rugged reliability for rough terrain, intercity highways, and executive field operations.
+3. **Hyundai Corporate Sedans (هيونداي سيدان - إلنترا / سوناتا / أكسنت)**:
+   - Fuel-efficient, dependable administrative and daily operational mobility across all Syrian cities.
 
 ---
 
-## 📁 Project Structure / هيكل المشروع
-```
-Rammah/
-├── assets/
-│   └── images/
-│       ├── hero.jpg
-│       ├── logo.jpg
-│       ├── fleet-maybach.jpg
-│       ├── fleet-rangerover.jpg
-│       ├── fleet-escalade.jpg
-│       ├── fleet-vip-van.jpg
-│       └── service-chauffeur.jpg
-├── css/
-│   ├── style.css         # Master luxury design system & bidirectional CSS
-│   └── animations.css    # Subtle luxury animations, shine effects & scroll reveals
-├── js/
-│   ├── translations.js   # Full Arabic & English dictionary
-│   └── main.js           # Core state, currency, filtering & WhatsApp modal engine
-├── index.html            # Semantic, SEO-optimized markup
-└── README.md
-```
+## 📋 Flexible Contract Options / مرونة التعاقد
+- **With Drivers**: Professional, certified drivers with thorough background vetting, defense training, and deep familiarity with Syrian roads.
+- **Without Drivers (Self-Managed)**: Vehicles handed over for organizational direct use.
+- **Duration Options**: Monthly, annual renewable, and grant/project-specific timelines.
+- **Support & SLA**: 24/7 technical assistance, routine preventative maintenance, and immediate vehicle replacement anywhere in Syria.
 
 ---
 
-## 🚀 Running the Project Locally
-Simply open `index.html` in any modern web browser or serve via any static HTTP server (e.g. `npx serve .` or VS Code Live Server).
+## 📞 Contact Information / معلومات التواصل
+- **Email**: [info@rammah-trvl.com](mailto:info@rammah-trvl.com)
+- **Phone / WhatsApp**: [+90 535 251 24 48](https://wa.me/905352512448)
+- **Headquarters & Operations**: Damascus, Aleppo, Latakia, Tartus, Homs & Nationwide Coverage.
 
 ---
 
-## 📜 License
-© 2026 Rammah Travel Co. All rights reserved.
-Registered Enterprise in the Syrian Arab Republic.
+## 🔑 Git & SSH Configuration
+An SSH key pair has been generated for GitHub:
+- Public Key Path: `~/.ssh/id_ed25519_rammah.pub`
+- Private Key Path: `~/.ssh/id_ed25519_rammah`
+- Host config registered in `~/.ssh/config`

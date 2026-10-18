@@ -1,66 +1,35 @@
 /* ===================================================================
    RAMMAH TRAVEL - CORE LOGIC & INTERACTION ENGINE
-   Enterprise & Luxury Car Rental Syria
+   Enterprise, INGO & Government Fleet Contracting (Syria)
    =================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   // App State
-  let currentLang = localStorage.getItem('rammah_lang') || 'ar'; // Default Arabic for Syrian market
-  let currentCurrency = localStorage.getItem('rammah_currency') || 'USD';
-  const exchangeRateUSD_SYP = 14800; // Syrian Pound indicative market rate
+  let currentLang = localStorage.getItem('rammah_lang') || 'ar'; // Default Arabic for Syrian audience
 
-  // Fleet Base Pricing in USD/day
-  const fleetPricing = {
-    'maybach': { usd: 650, nameEn: 'Mercedes-Maybach S680', nameAr: 'مرسيدس-مايباخ S680' },
-    'rangerover': { usd: 450, nameEn: 'Range Rover Autobiography', nameAr: 'رينج روفر أوتوبيوغرافي' },
-    'escalade': { usd: 500, nameEn: 'Cadillac Escalade Sport Platinum', nameAr: 'كاديلاك إسكاليد سبورت بلاتينيوم' },
-    'vipvan': { usd: 400, nameEn: 'Mercedes-Benz V-Class Maybach VIP', nameAr: 'مرسيدس-بنز V-Class تعديل مايباخ VIP' }
+  // Primary Contact Info
+  const CONTACT_PHONE_WHATSAPP = '905352512448';
+  const CONTACT_EMAIL = 'info@rammah-trvl.com';
+
+  const fleetData = {
+    'h1': { nameEn: 'Hyundai H-1 Passenger Van (9-12 Seats)', nameAr: 'فان هيونداي H-1 للنقل الجماعي (9-12 راكب)' },
+    'santafe': { nameEn: 'Hyundai Santa Fe 4WD (CM & Newer Models)', nameAr: 'هيونداي سنتافيه دفع رباعي 4x4 (طراز CM والحديث)' },
+    'sedan': { nameEn: 'Hyundai Corporate Sedans (Elantra / Sonata)', nameAr: 'هيونداي سيدان للشركات والمنظمات (إلنترا / سوناتا)' },
+    'multi': { nameEn: 'Mixed Integrated Fleet (Multi-Vehicle)', nameAr: 'أسطول متكامل ومختلط (عدة مركبات)' }
   };
 
-  let selectedVehicleKey = 'maybach';
+  let selectedVehicleKey = 'h1';
 
   // DOM Elements
   const langToggleBtn = document.getElementById('langToggle');
-  const currencyToggleBtn = document.getElementById('currencyToggle');
   const mainHeader = document.getElementById('mainHeader');
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
   const closeDrawerBtn = document.getElementById('closeDrawerBtn');
   const bookingModal = document.getElementById('bookingModal');
   const closeModalBtn = document.getElementById('closeModalBtn');
-  const bookingForm = document.getElementById('bookingForm');
+  const rfpForm = document.getElementById('rfpForm');
   const modalVehicleSelect = document.getElementById('modalVehicleSelect');
-  const modalDaysInput = document.getElementById('modalDaysInput');
-  const addonAirportCheck = document.getElementById('addonAirport');
-  const addonArmoredCheck = document.getElementById('addonArmored');
-
-  // Summary Elements
-  const summarySubtotal = document.getElementById('summarySubtotal');
-  const summaryDuration = document.getElementById('summaryDuration');
-  const summaryAddons = document.getElementById('summaryAddons');
-  const summaryTotal = document.getElementById('summaryTotal');
-
-  // Format Currency
-  function formatMoney(amountUSD) {
-    if (currentCurrency === 'SYP') {
-      const sypAmount = Math.round(amountUSD * exchangeRateUSD_SYP);
-      return sypAmount.toLocaleString() + (currentLang === 'ar' ? ' ل.س' : ' SYP');
-    } else {
-      return '$' + amountUSD.toLocaleString();
-    }
-  }
-
-  // Update All Rates in Fleet Cards
-  function updateFleetPricesDisplay() {
-    document.querySelectorAll('.fleet-card').forEach(card => {
-      const carKey = card.getAttribute('data-car-key');
-      const badge = card.querySelector('.rate-value');
-      if (badge && fleetPricing[carKey]) {
-        badge.textContent = formatMoney(fleetPricing[carKey].usd);
-      }
-    });
-    updateModalSummary();
-  }
 
   // Apply Language & Translations
   function applyLanguage(lang) {
@@ -95,8 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> English` 
         : `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> العربية`;
     }
-
-    updateFleetPricesDisplay();
   }
 
   // Language Toggle Event
@@ -104,16 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     langToggleBtn.addEventListener('click', () => {
       const newLang = (currentLang === 'ar') ? 'en' : 'ar';
       applyLanguage(newLang);
-    });
-  }
-
-  // Currency Toggle Event
-  if (currencyToggleBtn) {
-    currencyToggleBtn.addEventListener('click', () => {
-      currentCurrency = (currentCurrency === 'USD') ? 'SYP' : 'USD';
-      localStorage.setItem('rammah_currency', currentCurrency);
-      currencyToggleBtn.textContent = (currentCurrency === 'USD') ? 'USD ($)' : (currentLang === 'ar' ? 'ل.س (SYP)' : 'SYP (ل.س)');
-      updateFleetPricesDisplay();
     });
   }
 
@@ -182,15 +139,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Modal Open & Calculation Logic
+  // Modal Open & Close Logic
   function openModal(carKey) {
-    if (carKey && fleetPricing[carKey]) {
+    if (carKey && fleetData[carKey]) {
       selectedVehicleKey = carKey;
       if (modalVehicleSelect) {
         modalVehicleSelect.value = carKey;
       }
     }
-    updateModalSummary();
     if (bookingModal) {
       bookingModal.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -216,83 +172,70 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Connect "Book a Vehicle" buttons
+  // Connect "Request Contract Proposal" buttons
   document.querySelectorAll('.trigger-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const carKey = btn.getAttribute('data-car-key') || 'maybach';
+      const carKey = btn.getAttribute('data-car-key') || 'h1';
       openModal(carKey);
     });
   });
 
-  // Quick Booking Form Submit
-  const quickBookingForm = document.getElementById('quickBookingForm');
-  if (quickBookingForm) {
-    quickBookingForm.addEventListener('submit', (e) => {
+  // Quick RFP Form Submit
+  const quickRfpForm = document.getElementById('quickRfpForm');
+  if (quickRfpForm) {
+    quickRfpForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const selectedType = document.getElementById('quickCarType')?.value || 'maybach';
+      const selectedType = document.getElementById('quickCarType')?.value || 'h1';
       openModal(selectedType);
     });
   }
 
-  // Update Modal Pricing Summary
-  function updateModalSummary() {
-    const carKey = modalVehicleSelect ? modalVehicleSelect.value : selectedVehicleKey;
-    const baseDailyRate = fleetPricing[carKey] ? fleetPricing[carKey].usd : 500;
-    const days = parseInt(modalDaysInput ? modalDaysInput.value : 1) || 1;
-
-    let addonsUSD = 0;
-    if (addonAirportCheck && addonAirportCheck.checked) addonsUSD += 100;
-    if (addonArmoredCheck && addonArmoredCheck.checked) addonsUSD += 250;
-
-    const totalEstimateUSD = (baseDailyRate * days) + addonsUSD;
-
-    if (summarySubtotal) summarySubtotal.textContent = formatMoney(baseDailyRate);
-    if (summaryDuration) summaryDuration.textContent = `${days} ${currentLang === 'ar' ? 'أيام' : 'Days'}`;
-    if (summaryAddons) summaryAddons.textContent = formatMoney(addonsUSD);
-    if (summaryTotal) summaryTotal.textContent = formatMoney(totalEstimateUSD);
-  }
-
-  if (modalVehicleSelect) modalVehicleSelect.addEventListener('change', updateModalSummary);
-  if (modalDaysInput) modalDaysInput.addEventListener('input', updateModalSummary);
-  if (addonAirportCheck) addonAirportCheck.addEventListener('change', updateModalSummary);
-  if (addonArmoredCheck) addonArmoredCheck.addEventListener('change', updateModalSummary);
-
-  // Modal WhatsApp Dispatch Submission
-  if (bookingForm) {
-    bookingForm.addEventListener('submit', (e) => {
+  // Modal RFP WhatsApp & Email Submission
+  if (rfpForm) {
+    rfpForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('modalName')?.value || '';
+      const orgName = document.getElementById('modalOrgName')?.value || '';
+      const contactPerson = document.getElementById('modalContactPerson')?.value || '';
       const phone = document.getElementById('modalPhone')?.value || '';
-      const carKey = modalVehicleSelect?.value || 'maybach';
-      const days = modalDaysInput?.value || '1';
-      const carName = (currentLang === 'ar') ? fleetPricing[carKey].nameAr : fleetPricing[carKey].nameEn;
-      const airportService = (addonAirportCheck && addonAirportCheck.checked) ? (currentLang === 'ar' ? 'نعم (استقبال VIP)' : 'Yes (Airport VIP)') : (currentLang === 'ar' ? 'لا' : 'No');
-      const armoredService = (addonArmoredCheck && addonArmoredCheck.checked) ? (currentLang === 'ar' ? 'نعم (مرافقة أمنية وتصفيح)' : 'Yes (Armored Escort)') : (currentLang === 'ar' ? 'لا' : 'No');
+      const email = document.getElementById('modalEmail')?.value || '';
+      const carKey = modalVehicleSelect?.value || 'h1';
+      const fleetCount = document.getElementById('modalFleetCount')?.value || '1';
+      const contractPeriod = document.getElementById('modalContractPeriod')?.value || 'Monthly';
+      const driverPreference = document.getElementById('modalDriverPref')?.value || 'With Driver';
+      const operationalNotes = document.getElementById('modalNotes')?.value || '';
+
+      const carName = (currentLang === 'ar') ? fleetData[carKey]?.nameAr : fleetData[carKey]?.nameEn;
 
       let message = '';
       if (currentLang === 'ar') {
-        message = `مرحباً رماح ترافيل (Rammah Travel)، أود تأكيد حجز واستفسار تنفيذي:\n\n` +
-                  `👤 الاسم / الجهة: ${name}\n` +
-                  `📱 رقم التواصل: ${phone}\n` +
-                  `🚗 السيارة المختارة: ${carName}\n` +
-                  `📅 مدة الحجز: ${days} يوم\n` +
-                  `✈️ استقبال مطار دمشق الدولي VIP: ${airportService}\n` +
-                  `🛡️ حماية وتصفيح ومرافقة أمنية: ${armoredService}\n\n` +
-                  `يرجى تأكيد التوافر وتفاصيل التسليم في سوريا. شكراً جزيلاً.`;
+        message = `مرحباً شركة رماح ترافيل (Rammah Travel)، نود طلب استدراج عرض أسعار لعقد أسطول مركبات في سوريا:\n\n` +
+                  `🏢 اسم الجهة / المنظمة / الشركة: ${orgName}\n` +
+                  `👤 مسؤول التواصل: ${contactPerson}\n` +
+                  `📱 هاتف التواصل: ${phone}\n` +
+                  `✉️ البريد الرسمي: ${email}\n` +
+                  `🚗 طراز المركبة المطلوب: ${carName}\n` +
+                  `🔢 عدد المركبات المطلوبة: ${fleetCount}\n` +
+                  `📅 مدة التعاقد التقديرية: ${contractPeriod}\n` +
+                  `👨‍✈️ خيار السائق: ${driverPreference}\n` +
+                  (operationalNotes ? `📝 تفاصيل ونطاق العمل: ${operationalNotes}\n\n` : `\n`) +
+                  `يرجى موافاتنا بالعرض الفني والمالي وشروط التعاقد. شكراً جزيلاً.`;
       } else {
-        message = `Hello Rammah Travel Concierge, I would like to request an executive reservation:\n\n` +
-                  `👤 Name / Entity: ${name}\n` +
+        message = `Hello Rammah Travel Fleet Contracting, We would like to request an official RFP / Contract Proposal in Syria:\n\n` +
+                  `🏢 Organization / Company: ${orgName}\n` +
+                  `👤 Focal Point / Contact: ${contactPerson}\n` +
                   `📱 Contact Phone: ${phone}\n` +
-                  `🚗 Vehicle Selected: ${carName}\n` +
-                  `📅 Duration: ${days} Day(s)\n` +
-                  `✈️ Damascus Airport VIP Meet & Greet: ${airportService}\n` +
-                  `🛡️ Armored Escort / Protection: ${armoredService}\n\n` +
-                  `Please confirm vehicle availability and reservation details in Syria. Thank you.`;
+                  `✉️ Official Email: ${email}\n` +
+                  `🚗 Vehicle Model: ${carName}\n` +
+                  `🔢 Number of Units: ${fleetCount}\n` +
+                  `📅 Expected Contract Term: ${contractPeriod}\n` +
+                  `👨‍✈️ Driver Service: ${driverPreference}\n` +
+                  (operationalNotes ? `📝 Operational Notes: ${operationalNotes}\n\n` : `\n`) +
+                  `Please provide us with your technical and commercial proposal. Thank you.`;
       }
 
-      const whatsappUrl = `https://wa.me/963944000888?text=${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://wa.me/${CONTACT_PHONE_WHATSAPP}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
       closeModal();
     });
@@ -316,6 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  // Initial application of default language and prices
+  // Initial application of default language
   applyLanguage(currentLang);
 });
