@@ -44,13 +44,13 @@ Covering all 14 Syrian administrative districts with real-time mouse hover inter
 ---
 
 ## 🤝 Trusted Partners & INGOs / شركاؤنا والمنظمات الدولية
-Featured with custom high-definition vector brand insignia, interactive hover accents, and official portals:
-- **[World Vision International](https://www.wvi.org/)** — International Humanitarian INGO
-- **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** — Government Entity
-- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** — Humanitarian Relief Organization
-- **[منظمة بهار (Bahar Organization)](https://bahar.ngo/)** — Humanitarian & Relief NGO
-- **[Space Of Peace | مساحة سلام](https://spaceofpeace.org/)** — Peacebuilding & Community Support Organization
-- **[منظمة مهاد (Mehad)](https://www.mehad.fr/ar/)** — French Health & International Solidarity INGO
+Featured with official brand logos, high-availability local SVG/PNG assets, interactive brand-tailored hover accents, and official portals:
+- **[World Vision International](https://www.wvi.org/)** — Official logo ([logo.svg](https://www.wvi.org/themes/custom/wvi_2018/logo.svg))
+- **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** — Official header crest ([moc-logo-header-v2.svg](https://moc.gov.sy/svg/moc-logo-header-v2.svg))
+- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** — Official brand insignia ([Takaful-Al-Sham.png](https://takafulalsham.org/wp-content/uploads/2024/06/Takaful-Al-Sham.png))
+- **[منظمة بهار (Bahar Organization)](https://bahar.ngo/)** — Official white vector logo ([white_logo.svg](https://bahar.ngo/assets/img/white_logo.svg))
+- **[Space Of Peace | مساحة سلام](https://spaceofpeace.org/)** — Official circular emblem ([SOP-LOGO-m1-140x140.png](https://spaceofpeace.org/wp-content/uploads/2024/05/SOP-LOGO-m1-140x140.png))
+- **[منظمة مهاد (Mehad)](https://www.mehad.fr/ar/)** — Official anniversary logo ([logo_en_mehad_15_ans_cmjn-.png](https://www.mehad.fr/wp-content/uploads/2024/10/logo_en_mehad_15_ans_cmjn-.png))
 
 ---
 
@@ -70,7 +70,7 @@ The website is engineered with a modern, touch-optimized responsive layout acros
 - **Swipeable Fleet Filter & Service Tabs**: Horizontal touch chips with `white-space: nowrap` for instant vehicle category and service switching without text wrapping or layout distortion.
 - **Mobile Luxury Drawer & Dimmed Backdrop**: Smooth animated slide-in drawer with dedicated blur overlay backdrop, body scroll locking, language switcher, quick contacts, and full-width proposal buttons.
 - **Sticky Quick-Action Mobile Bar**: 1-tap direct access to WhatsApp chat, direct phone dialer, and RFP proposal modal pinned to the bottom of mobile screens.
-- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=3.3`) ensuring mobile devices immediately receive the latest responsive design system.
+- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=3.4`) ensuring mobile devices immediately receive the latest responsive design system.
 
 ---
 
