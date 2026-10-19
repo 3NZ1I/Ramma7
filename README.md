@@ -10,6 +10,8 @@
 
 ## 🗺️ Interactive Syria Map (14 Governorates in Gold & Green) / خارطة سوريا التفاعلية
 Covering all 14 Syrian administrative districts with real-time mouse hover interaction, glowing radar pulse pins in gold (`#d4af37`) and emerald green (`#10b981`), live operational tooltips, and an integrated deployment dashboard:
+- **Precision Pin Anchoring**: Resolved SVG translation conflicts by styling internal circle and pulse geometry without touching group `translate(x, y)` transformations, ensuring all 14 radar pins remain permanently anchored to their true geographical coordinates.
+- **Dynamic Floating Tooltip (`.map-tooltip`)**: Coordinates are mathematically mapped to each governorate's exact geographical center in the `670.92 x 590.26` SVG coordinate space, smoothly gliding above the hovered district with a subtle spring transition (`transition: left 0.18s ease, top 0.18s ease`).
 1. **دمشق (Damascus)** — Central Administrative HQ & Airport VIP Depot
 2. **ريف دمشق (Rural Damascus)** — Industrial Zones & Regional Corridors
 3. **حلب (Aleppo)** — Northern Humanitarian & Commercial Hub
@@ -44,13 +46,13 @@ Covering all 14 Syrian administrative districts with real-time mouse hover inter
 ---
 
 ## 🤝 Trusted Partners & References / مراجعنا وشركاؤنا
-Featured with dark luxury frosted glass showcase badges (`.partner-showcase-plate`), 100% crisp vector-grade typography, brand-tailored hover lighting, and official direct portals:
-- **[World Vision International](https://www.wvi.org/)** — Crisp white wordmark with radiant orange brand flame on deep obsidian glass
-- **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** — Official Syrian ministerial coat of arms in royal gold (`#d4af37`) with crisp white calligraphy
-- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** — High-contrast white vector emblem and bilingual calligraphy with emerald hover aura
-- **[منظمة بهار (Bahar Organization)](https://bahar.ngo/)** — Official white vector typography and brand mark with oceanic azure glow
-- **[مساحة سلام | Space Of Peace](https://spaceofpeace.org/)** — High-contrast white dove insignia and bilingual wordmark with vibrant teal accent
-- **[منظمة مهاد الفرنسية (Mehad)](https://www.mehad.fr/ar/)** — Official clean baseline white logo with medical solidarity crimson accent
+Featured with dark luxury frosted glass showcase badges (`.partner-showcase-plate`), 100% crisp vector-grade SVG typography, brand-tailored hover lighting, and official direct portals:
+- **[World Vision International](https://www.wvi.org/)** — Crisp white wordmark with radiant orange brand flame on deep obsidian glass (`wv.svg`)
+- **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** — Official Syrian ministerial coat of arms in royal gold (`#d4af37`) with crisp white calligraphy (`moc.svg`)
+- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** — High-contrast pure white vector SVG (`tas.svg`) with dual CSS safety filter (`brightness(0) invert(1)`) and emerald hover aura
+- **[منظمة بهار (Bahar Organization)](https://bahar.ngo/)** — Official white vector typography and brand mark with oceanic azure glow (`bahar.svg`)
+- **[مساحة سلام | Space Of Peace](https://spaceofpeace.org/)** — High-contrast pure white dove insignia and bilingual wordmark (`sop.svg`) with vibrant teal accent
+- **[منظمة مهاد الفرنسية (Mehad)](https://www.mehad.fr/ar/)** — Official clean baseline white SVG logo (`mehad.svg`) with medical solidarity crimson accent
 
 ---
 

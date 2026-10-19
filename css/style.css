@@ -933,6 +933,15 @@ html[dir="rtl"] .fleet-rate-badge {
   box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
 }
 
+/* Ensure Takaful Al Sham & Space of Peace logos render 100% solid crisp white */
+.badge-tas .partner-logo-display {
+  filter: brightness(0) invert(1) drop-shadow(0 0 1.2px rgba(255, 255, 255, 0.85)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+}
+
+.badge-sop .partner-logo-display {
+  filter: brightness(0) invert(1) drop-shadow(0 0 1.2px rgba(255, 255, 255, 0.85)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+}
+
 .partner-showcase-plate.badge-bahar:hover,
 .partner-card:hover .partner-showcase-plate.badge-bahar {
   border-color: #0ea5e9;
@@ -1291,14 +1300,9 @@ html[dir="rtl"] .fleet-rate-badge {
   filter: drop-shadow(0 0 16px rgba(16, 185, 129, 0.7));
 }
 
-/* Radar Pulse Pins */
+/* Radar Pulse Pins - Note: never set CSS transform directly on .gov-pin <g> to preserve SVG translate(x,y) */
 .gov-pin {
   cursor: pointer;
-  transition: transform 0.25s ease;
-}
-
-.gov-pin:hover, .gov-pin.active {
-  transform: scale(1.15);
 }
 
 .pin-core {
@@ -1306,12 +1310,16 @@ html[dir="rtl"] .fleet-rate-badge {
   stroke: #ffffff;
   stroke-width: 1.5;
   filter: drop-shadow(0 0 6px #10b981);
+  transition: r 0.25s ease, fill 0.25s ease, stroke-width 0.25s ease;
 }
 
+.gov-pin:hover .pin-core,
 .gov-pin.active .pin-core {
+  r: 6.5px;
   fill: var(--gold-primary);
   stroke: #ffffff;
-  filter: drop-shadow(0 0 8px var(--gold-primary));
+  stroke-width: 2px;
+  filter: drop-shadow(0 0 10px var(--gold-primary));
 }
 
 .pin-pulse {
@@ -1323,6 +1331,12 @@ html[dir="rtl"] .fleet-rate-badge {
   animation: radar-ping 2.5s infinite ease-out;
 }
 
+.gov-pin:hover .pin-pulse,
+.gov-pin.active .pin-pulse {
+  stroke-width: 2.2px;
+  stroke: var(--gold-primary);
+}
+
 .pin-text {
   fill: #f3f4f6;
   font-size: 11px;
@@ -1331,12 +1345,15 @@ html[dir="rtl"] .fleet-rate-badge {
   pointer-events: none;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 6px rgba(0, 0, 0, 0.9);
   font-family: inherit;
+  transition: fill 0.2s ease, font-size 0.2s ease;
 }
 
+.gov-pin:hover .pin-text,
 .gov-pin.active .pin-text {
   fill: var(--gold-light);
   font-weight: 800;
-  filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.8));
+  font-size: 12.5px;
+  filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.9));
 }
 
 @keyframes radar-ping {
@@ -1354,7 +1371,7 @@ html[dir="rtl"] .fleet-rate-badge {
   }
 }
 
-/* Floating Hover Tooltip */
+/* Floating Hover Tooltip (Centered exactly over active governorate pin) */
 .map-tooltip {
   position: absolute;
   pointer-events: none;
@@ -1365,12 +1382,15 @@ html[dir="rtl"] .fleet-rate-badge {
   color: #ffffff;
   font-size: 0.85rem;
   font-weight: 600;
-  box-shadow: var(--shadow-md), 0 0 15px rgba(16, 185, 129, 0.4);
+  box-shadow: var(--shadow-md), 0 0 18px rgba(16, 185, 129, 0.45);
   backdrop-filter: blur(10px);
   z-index: 50;
   display: none;
-  transform: translate(-50%, -125%);
+  transform: translate(-50%, -140%);
   white-space: nowrap;
+  right: auto;
+  bottom: auto;
+  transition: left 0.18s cubic-bezier(0.16, 1, 0.3, 1), top 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .map-tooltip-badge {

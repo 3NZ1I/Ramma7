@@ -350,6 +350,44 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===================================================================
   // Interactive Syria Map Engine (14 Governorates)
   // ===================================================================
+  // Map Pin Coordinates in 670.92 x 590.26 SVG ViewBox
+  const govPinCoords = {
+    'damascus': { x: 67, y: 449 },
+    'rifdimashq': { x: 110, y: 435 },
+    'aleppo': { x: 205, y: 129 },
+    'homs': { x: 197, y: 334 },
+    'hama': { x: 117, y: 234 },
+    'latakia': { x: 41, y: 194 },
+    'tartus': { x: 48, y: 279 },
+    'idlib': { x: 109, y: 174 },
+    'daraa': { x: 54, y: 519 },
+    'suwayda': { x: 113, y: 534 },
+    'quneitra': { x: 23, y: 504 },
+    'deirezzor': { x: 453, y: 244 },
+    'raqqa': { x: 314, y: 144 },
+    'hasakah': { x: 520, y: 94 }
+  };
+
+  const syriaSvgWrapper = document.querySelector('.syria-svg-wrapper');
+
+  function showGovTooltip(govKey) {
+    if (!mapTooltip || !govPinCoords[govKey] || !governoratesData[govKey]) return;
+    const g = governoratesData[govKey];
+    const name = (currentLang === 'ar') ? g.nameAr : g.nameEn;
+    const statusText = (currentLang === 'ar') ? 'تغطية نشطة 24/7' : 'Active 24/7';
+    mapTooltip.innerHTML = `<span class="map-tooltip-badge">${statusText}</span> ${name}`;
+
+    const coord = govPinCoords[govKey];
+    const leftPct = (coord.x / 670.92) * 100;
+    const topPct = (coord.y / 590.26) * 100;
+
+    mapTooltip.style.left = `${leftPct.toFixed(2)}%`;
+    mapTooltip.style.top = `${topPct.toFixed(2)}%`;
+    mapTooltip.style.right = 'auto';
+    mapTooltip.style.bottom = 'auto';
+    mapTooltip.style.display = 'block';
+  }
+
   function updateGovernorateDisplay(govKey) {
     if (!governoratesData[govKey]) return;
     activeGovernorateKey = govKey;
@@ -389,50 +427,34 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalGovSelect) {
       modalGovSelect.value = govKey;
     }
+
+    // Anchor the tooltip directly over the governorate pin
+    showGovTooltip(govKey);
   }
 
   // Map Hover & Click Handlers
-  const syriaSvgWrapper = document.querySelector('.syria-svg-wrapper');
-
-  function handleGovHover(e, govKey) {
+  function handleGovHover(govKey) {
     if (!governoratesData[govKey]) return;
     updateGovernorateDisplay(govKey);
-
-    if (mapTooltip && syriaSvgWrapper) {
-      const g = governoratesData[govKey];
-      const name = (currentLang === 'ar') ? g.nameAr : g.nameEn;
-      const statusText = (currentLang === 'ar') ? 'تغطية نشطة 24/7' : 'Active 24/7 Coverage';
-      mapTooltip.innerHTML = `<span class="map-tooltip-badge">${statusText}</span> ${name}`;
-      mapTooltip.style.display = 'block';
-
-      // Position tooltip relative to wrapper container
-      const rect = syriaSvgWrapper.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      mapTooltip.style.left = `${x}px`;
-      mapTooltip.style.top = `${y}px`;
-    }
   }
 
   document.querySelectorAll('.gov-path, .gov-pin').forEach(el => {
     const govKey = el.getAttribute('data-gov');
 
-    el.addEventListener('mouseenter', (e) => handleGovHover(e, govKey));
-    el.addEventListener('mousemove', (e) => handleGovHover(e, govKey));
-
-    el.addEventListener('mouseleave', () => {
-      if (mapTooltip) mapTooltip.style.display = 'none';
-    });
-
-    el.addEventListener('click', () => {
-      updateGovernorateDisplay(govKey);
-    });
+    el.addEventListener('mouseenter', () => handleGovHover(govKey));
+    el.addEventListener('click', () => updateGovernorateDisplay(govKey));
 
     // Mobile touch support
-    el.addEventListener('touchstart', (e) => {
+    el.addEventListener('touchstart', () => {
       updateGovernorateDisplay(govKey);
     }, { passive: true });
   });
+
+  if (syriaSvgWrapper) {
+    syriaSvgWrapper.addEventListener('mouseleave', () => {
+      if (mapTooltip) mapTooltip.style.display = 'none';
+    });
+  }
 
   // Governorates Quick Select Pills
   document.querySelectorAll('.gov-pill-btn').forEach(btn => {
