@@ -875,109 +875,107 @@ html[dir="rtl"] .fleet-rate-badge {
   opacity: 1;
 }
 
-.partner-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 18px;
-}
-
-.partner-icon-badge {
-  width: 92px;
-  height: 54px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--gold-border);
+/* Partner Brand Showcase Plates (Executive & Maximum Legibility) */
+.partner-showcase-plate {
+  width: 100%;
+  height: 94px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  padding: 14px 24px;
+  margin-bottom: 22px;
   transition: all var(--transition-smooth);
-  box-shadow: inset 0 0 12px rgba(212, 175, 55, 0.08);
-  padding: 6px 10px;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
-.partner-logo-img {
+.partner-logo-display {
   max-width: 100%;
   max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
   transition: transform var(--transition-fast);
 }
 
-.partner-card:hover .partner-icon-badge {
-  transform: scale(1.06) translateY(-2px);
-  border-color: var(--gold-primary);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+.partner-card:hover .partner-showcase-plate {
+  transform: translateY(-3px);
 }
 
-.partner-card:hover .partner-logo-img {
-  transform: scale(1.04);
+.partner-card:hover .partner-logo-display {
+  transform: scale(1.05);
 }
 
-/* Individual Brand Badge Styling */
-.partner-icon-badge.badge-wv {
-  border-color: rgba(243, 112, 33, 0.4);
-  background: rgba(255, 255, 255, 0.05);
+/* Individual Brand Showcase Plaque Styling */
+
+/* 1. World Vision: Deep Midnight Glass with Radiant Orange Accent */
+.partner-showcase-plate.badge-wv {
+  background: radial-gradient(circle at center, rgba(243, 112, 33, 0.14) 0%, rgba(13, 18, 29, 0.92) 100%);
+  border: 1px solid rgba(243, 112, 33, 0.35);
+  box-shadow: inset 0 0 20px rgba(243, 112, 33, 0.08), 0 4px 15px rgba(0, 0, 0, 0.35);
 }
-.partner-card:hover .partner-icon-badge.badge-wv {
+.partner-card:hover .partner-showcase-plate.badge-wv {
   border-color: #f37021;
-  box-shadow: 0 0 20px rgba(243, 112, 33, 0.35);
-  background: rgba(243, 112, 33, 0.1);
+  box-shadow: 0 0 25px rgba(243, 112, 33, 0.45), inset 0 0 20px rgba(243, 112, 33, 0.15);
 }
 
-.partner-icon-badge.badge-moc {
-  background: #ffffff;
-  border-color: rgba(212, 175, 55, 0.6);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+/* 2. Syrian Ministry of Culture: Executive Heritage Champagne Gold Enamel */
+.partner-showcase-plate.badge-moc {
+  background: linear-gradient(135deg, #ffffff 0%, #f7f4ed 65%, #ece7dc 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), inset 0 0 16px rgba(212, 175, 55, 0.15);
 }
-.partner-card:hover .partner-icon-badge.badge-moc {
+.partner-card:hover .partner-showcase-plate.badge-moc {
   border-color: var(--gold-primary);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 28px rgba(212, 175, 55, 0.5), 0 6px 22px rgba(0, 0, 0, 0.4);
 }
 
-.partner-icon-badge.badge-tas {
-  background: #ffffff;
-  border-color: rgba(16, 185, 129, 0.45);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+/* 3. Takaful Al Sham: Pure Emerald Enamel Plaque */
+.partner-showcase-plate.badge-tas {
+  background: linear-gradient(135deg, #ffffff 0%, #f2f9f5 65%, #e3f5ec 100%);
+  border: 1.5px solid rgba(16, 185, 129, 0.45);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), inset 0 0 16px rgba(16, 185, 129, 0.12);
 }
-.partner-card:hover .partner-icon-badge.badge-tas {
+.partner-card:hover .partner-showcase-plate.badge-tas {
   border-color: #10b981;
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 28px rgba(16, 185, 129, 0.45), 0 6px 22px rgba(0, 0, 0, 0.4);
 }
 
-.partner-icon-badge.badge-bahar {
-  background: #002244;
-  border-color: rgba(14, 165, 233, 0.45);
+/* 4. Bahar Organization: Deep Oceanic Azure Glass */
+.partner-showcase-plate.badge-bahar {
+  background: radial-gradient(circle at center, rgba(14, 165, 233, 0.16) 0%, rgba(7, 24, 46, 0.95) 100%);
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  box-shadow: inset 0 0 20px rgba(14, 165, 233, 0.08), 0 4px 15px rgba(0, 0, 0, 0.35);
 }
-.partner-card:hover .partner-icon-badge.badge-bahar {
+.partner-card:hover .partner-showcase-plate.badge-bahar {
   border-color: #0ea5e9;
-  box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
-  background: #002b55;
+  box-shadow: 0 0 25px rgba(14, 165, 233, 0.45), inset 0 0 20px rgba(14, 165, 233, 0.15);
 }
 
-.partner-icon-badge.badge-sop {
-  background: #ffffff;
-  border-color: rgba(20, 184, 166, 0.45);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+/* 5. Space Of Peace: Teal & Cyan Harmony Enamel Plaque */
+.partner-showcase-plate.badge-sop {
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 65%, #ddfaf5 100%);
+  border: 1.5px solid rgba(20, 184, 166, 0.45);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), inset 0 0 16px rgba(20, 184, 166, 0.12);
 }
-.partner-card:hover .partner-icon-badge.badge-sop {
+.partner-card:hover .partner-showcase-plate.badge-sop {
   border-color: #14b8a6;
-  box-shadow: 0 0 20px rgba(20, 184, 166, 0.4);
+  box-shadow: 0 0 28px rgba(20, 184, 166, 0.45), 0 6px 22px rgba(0, 0, 0, 0.4);
 }
 
-.partner-icon-badge.badge-mehad {
-  background: #ffffff;
-  border-color: rgba(225, 29, 72, 0.45);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+/* 6. Mehad France: Crimson Medical Solidarity Enamel Plaque */
+.partner-showcase-plate.badge-mehad {
+  background: linear-gradient(135deg, #ffffff 0%, #fff1f2 65%, #ffe4e6 100%);
+  border: 1.5px solid rgba(225, 29, 72, 0.45);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), inset 0 0 16px rgba(225, 29, 72, 0.12);
 }
-.partner-card:hover .partner-icon-badge.badge-mehad {
+.partner-card:hover .partner-showcase-plate.badge-mehad {
   border-color: #e11d48;
-  box-shadow: 0 0 20px rgba(225, 29, 72, 0.4);
+  box-shadow: 0 0 28px rgba(225, 29, 72, 0.45), 0 6px 22px rgba(0, 0, 0, 0.4);
 }
 
 .partner-meta {

@@ -44,13 +44,20 @@ Covering all 14 Syrian administrative districts with real-time mouse hover inter
 ---
 
 ## 🤝 Trusted Partners & INGOs / شركاؤنا والمنظمات الدولية
-Featured with official brand logos, high-availability local SVG/PNG assets, interactive brand-tailored hover accents, and official portals:
-- **[World Vision International](https://www.wvi.org/)** — Official logo ([logo.svg](https://www.wvi.org/themes/custom/wvi_2018/logo.svg))
-- **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** — Official header crest ([moc-logo-header-v2.svg](https://moc.gov.sy/svg/moc-logo-header-v2.svg))
-- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** — Official brand insignia ([Takaful-Al-Sham.png](https://takafulalsham.org/wp-content/uploads/2024/06/Takaful-Al-Sham.png))
-- **[منظمة بهار (Bahar Organization)](https://bahar.ngo/)** — Official white vector logo ([white_logo.svg](https://bahar.ngo/assets/img/white_logo.svg))
-- **[Space Of Peace | مساحة سلام](https://spaceofpeace.org/)** — Official circular emblem ([SOP-LOGO-m1-140x140.png](https://spaceofpeace.org/wp-content/uploads/2024/05/SOP-LOGO-m1-140x140.png))
-- **[منظمة مهاد (Mehad)](https://www.mehad.fr/ar/)** — Official anniversary logo ([logo_en_mehad_15_ans_cmjn-.png](https://www.mehad.fr/wp-content/uploads/2024/10/logo_en_mehad_15_ans_cmjn-.png))
+Featured with executive full-width brand showcase plaques, ultra-high-definition master assets, interactive brand-tailored hover lighting, and official direct portals:
+- **[World Vision International](https://www.wvi.org/)** — Official logo in deep midnight glass with radiant orange branding ([logo.svg](https://www.wvi.org/themes/custom/wvi_2018/logo.svg))
+- **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** — Official header crest on executive Syrian champagne gold enamel plaque ([moc-logo-header-v2.svg](https://moc.gov.sy/svg/moc-logo-header-v2.svg))
+- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** — Tightly-cropped high-contrast brand insignia on emerald enamel plaque ([Takaful-Al-Sham.png](https://takafulalsham.org/wp-content/uploads/2024/06/Takaful-Al-Sham.png))
+- **[منظمة بهار (Bahar Organization)](https://bahar.ngo/)** — Official white vector logo in deep oceanic azure glass ([white_logo.svg](https://bahar.ngo/assets/img/white_logo.svg))
+- **[Space Of Peace | مساحة سلام](https://spaceofpeace.org/)** — Master 2.5K high-definition circular emblem on cyan enamel plaque ([SOP-LOGO-m1.png](https://spaceofpeace.org/wp-content/uploads/2024/05/SOP-LOGO-m1.png))
+- **[منظمة مهاد (Mehad)](https://www.mehad.fr/ar/)** — Tightly-cropped anniversary logo on crimson medical solidarity enamel plaque ([logo_en_mehad_15_ans_cmjn-.png](https://www.mehad.fr/wp-content/uploads/2024/10/logo_en_mehad_15_ans_cmjn-.png))
+
+---
+
+## 👔 Uniformed Drivers & Cargo Labor Crews / كوادر السائقين بالزي الموحد وعمال التحميل
+- **Dedicated Uniformed Drivers**: Disciplined, security-trained corporate drivers dressed in matching official navy-blue company uniforms with collared shirts.
+- **Modern Hyundai Fleet Integration**: Operating white Hyundai passenger vans (H-1) and Hyundai Santa Fe SUVs with full technical and operational support.
+- **Cargo Loading & Unloading Labor**: Specialized cargo handlers for swift pallet handling, aid relief carton distribution, and warehouse transfers across all 14 Syrian governorates.
 
 ---
 
@@ -70,7 +77,7 @@ The website is engineered with a modern, touch-optimized responsive layout acros
 - **Swipeable Fleet Filter & Service Tabs**: Horizontal touch chips with `white-space: nowrap` for instant vehicle category and service switching without text wrapping or layout distortion.
 - **Mobile Luxury Drawer & Dimmed Backdrop**: Smooth animated slide-in drawer with dedicated blur overlay backdrop, body scroll locking, language switcher, quick contacts, and full-width proposal buttons.
 - **Sticky Quick-Action Mobile Bar**: 1-tap direct access to WhatsApp chat, direct phone dialer, and RFP proposal modal pinned to the bottom of mobile screens.
-- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=3.4`) ensuring mobile devices immediately receive the latest responsive design system.
+- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=3.5`) ensuring mobile devices immediately receive the latest responsive design system.
 
 ---
 

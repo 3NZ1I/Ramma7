@@ -208,9 +208,9 @@ const translations = {
     service4Desc: "Periodic preventative servicing, tire replacements, and guaranteed immediate vehicle replacement anywhere in Syria in case of breakdown.",
 
     // Drivers Section
-    chauffeurTag: "PROFESSIONAL DRIVERS & CARGO LABOR CREWS",
-    chauffeurTitle: "Experienced Drivers & Skilled Loading Crews Across Syria",
-    chauffeurDesc: "Whether you need licensed drivers for vehicles and trucks, or dedicated cargo labor teams for loading, unloading, and handling relief aid and goods, we supply vetted personnel trained in safety and operational discipline.",
+    chauffeurTag: "UNIFORMED DRIVERS & CARGO LABOR CREWS",
+    chauffeurTitle: "Uniformed Drivers & Skilled Loading Crews with Hyundai Fleet",
+    chauffeurDesc: "We provide an elite team of certified drivers dressed in official company uniforms alongside trained cargo loading & unloading crews, operating our modern Hyundai passenger and logistics fleet across all Syrian governorates with high discipline and safety.",
     check1: "Experienced in driving for international organizations, embassies, and cargo lines",
     check2: "Full awareness of Syrian road regulations, checkpoints, and safe corridors",
     check3: "Trained in defensive driving, vehicle care, and professional discretion",
@@ -458,9 +458,9 @@ const translations = {
     service4Desc: "صيانة وقائية دورية وتغيير زيوت وإطارات بانتظام، مع ضمان توفير سيارة أو شاحنة بديلة فورية في أي نقطة في سوريا بحال الأعطال.",
 
     // Drivers Section
-    chauffeurTag: "كوادر السائقين وعمال التحميل والتنزيل",
-    chauffeurTitle: "سائقون ذوو خبرة وعمال تحميل وتنزيل متخصصون في عموم سوريا",
-    chauffeurDesc: "في حال رغبتكم بالتعاقد مع سائق للمركبات أو الشاحنات، أو فرق عمال لتحميل وتنزيل وتفريغ الشحنات والمساعدات الإنسانية في الميدان، نوفر لكم نخبة من الكوادر المحلية المؤهلة والمشهود لها بالانضباط وحسن السيرة والسلامة.",
+    chauffeurTag: "كوادر السائقين بالزي الموحد وعمال التحميل والتنزيل",
+    chauffeurTitle: "سائقون محترفون بزي موحد وكوادر تحميل وتنزيل مع أسطول هيونداي",
+    chauffeurDesc: "نوفر لكم نخبة من السائقين المعتمدين بالزي الموحد الرسمي (Uniform) المنضبط وكوادر التحميل والتنزيل المدربة، المتخصصين في قيادة وتشغيل أسطول سيارات وشاحنات هيونداي لخدمة المنظمات والشركات في كافة المحافظات السورية بأعلى معايير اللباقة والسلامة.",
     check1: "خبرة واسعة في العمل مع المنظمات الدولية وقوافل الشحن والبعثات الدبلوماسية",
     check2: "معرفة تامة بجميع الطرق السورية والممرات الآمنة والمعابر الرسمية ومحاور الشحن",
     check3: "تدريب على القيادة الوقائية والالتزام الصارم بالسرية وحسن التعامل وحفظ الشحنات",
