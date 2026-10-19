@@ -57,8 +57,8 @@ Featured with dark luxury frosted glass showcase badges (`.partner-showcase-plat
 ---
 
 ## 👔 Uniformed Drivers & Cargo Labor Crews / كوادر السائقين بالزي الموحد وعمال التحميل
-- **Authentic Lifestyle Imagery (`service-chauffeur.jpg`)**: Professional photograph showcasing an all-male driver and logistics crew dressed in matching navy-blue corporate polo t-shirts with gold company crests.
-- **Rammah Travel Corporate Branding**: Features the modern company headquarters building in the background prominently displaying the golden crest logo and corporate name "**RAMMAH TRAVEL / رماح ترافيل**" on the facade.
+- **Authentic Lifestyle Imagery (`service-chauffeur.jpg`)**: Professional photograph showcasing an all-male driver and logistics crew dressed in matching navy-blue corporate polo t-shirts with the official golden winged 'RT' compass crest.
+- **Rammah Travel Corporate Branding**: Features the modern company headquarters building in the background prominently displaying the official golden winged 'RT' compass logo and corporate name "**RAMMAH TRAVEL / رماح ترافيل**" on the facade.
 - **Modern Hyundai Fleet Integration**: Operating white Hyundai passenger vans (H-1) and Hyundai Santa Fe SUVs with full technical and operational support.
 - **Cargo Loading & Unloading Labor**: Specialized cargo handlers for swift pallet handling, aid relief carton distribution, and warehouse transfers across all 14 Syrian governorates.
 
