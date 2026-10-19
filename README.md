@@ -43,21 +43,29 @@ Covering all 14 Syrian administrative districts with real-time mouse hover inter
 
 ---
 
-## 🤝 Trusted Partners & INGOs / شركاؤنا والمنظمات الدولية
-Featured with executive full-width brand showcase plaques, ultra-high-definition master assets, interactive brand-tailored hover lighting, and official direct portals:
-- **[World Vision International](https://www.wvi.org/)** — Official logo in deep midnight glass with radiant orange branding ([logo.svg](https://www.wvi.org/themes/custom/wvi_2018/logo.svg))
-- **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** — Official header crest on executive Syrian champagne gold enamel plaque ([moc-logo-header-v2.svg](https://moc.gov.sy/svg/moc-logo-header-v2.svg))
-- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** — Tightly-cropped high-contrast brand insignia on emerald enamel plaque ([Takaful-Al-Sham.png](https://takafulalsham.org/wp-content/uploads/2024/06/Takaful-Al-Sham.png))
-- **[منظمة بهار (Bahar Organization)](https://bahar.ngo/)** — Official white vector logo in deep oceanic azure glass ([white_logo.svg](https://bahar.ngo/assets/img/white_logo.svg))
-- **[Space Of Peace | مساحة سلام](https://spaceofpeace.org/)** — Master 2.5K high-definition circular emblem on cyan enamel plaque ([SOP-LOGO-m1.png](https://spaceofpeace.org/wp-content/uploads/2024/05/SOP-LOGO-m1.png))
-- **[منظمة مهاد (Mehad)](https://www.mehad.fr/ar/)** — Tightly-cropped anniversary logo on crimson medical solidarity enamel plaque ([logo_en_mehad_15_ans_cmjn-.png](https://www.mehad.fr/wp-content/uploads/2024/10/logo_en_mehad_15_ans_cmjn-.png))
+## 🤝 Trusted Partners & References / مراجعنا وشركاؤنا
+Featured with dark luxury frosted glass showcase badges (`.partner-showcase-plate`), 100% crisp vector-grade typography, brand-tailored hover lighting, and official direct portals:
+- **[World Vision International](https://www.wvi.org/)** — Crisp white wordmark with radiant orange brand flame on deep obsidian glass
+- **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** — Official Syrian ministerial coat of arms in royal gold (`#d4af37`) with crisp white calligraphy
+- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** — High-contrast white vector emblem and bilingual calligraphy with emerald hover aura
+- **[منظمة بهار (Bahar Organization)](https://bahar.ngo/)** — Official white vector typography and brand mark with oceanic azure glow
+- **[مساحة سلام | Space Of Peace](https://spaceofpeace.org/)** — High-contrast white dove insignia and bilingual wordmark with vibrant teal accent
+- **[منظمة مهاد الفرنسية (Mehad)](https://www.mehad.fr/ar/)** — Official clean baseline white logo with medical solidarity crimson accent
 
 ---
 
 ## 👔 Uniformed Drivers & Cargo Labor Crews / كوادر السائقين بالزي الموحد وعمال التحميل
-- **Dedicated Uniformed Drivers**: Disciplined, security-trained corporate drivers dressed in matching official navy-blue company uniforms with collared shirts.
+- **Authentic Lifestyle Imagery (`service-chauffeur.jpg`)**: Professional photograph showcasing an all-male driver and logistics crew dressed in matching navy-blue corporate polo t-shirts with gold company crests.
+- **Rammah Travel Corporate Branding**: Features the modern company headquarters building in the background prominently displaying the golden crest logo and corporate name "**RAMMAH TRAVEL / رماح ترافيل**" on the facade.
 - **Modern Hyundai Fleet Integration**: Operating white Hyundai passenger vans (H-1) and Hyundai Santa Fe SUVs with full technical and operational support.
 - **Cargo Loading & Unloading Labor**: Specialized cargo handlers for swift pallet handling, aid relief carton distribution, and warehouse transfers across all 14 Syrian governorates.
+
+---
+
+## 🏛️ Streamlined 3-Column Footer / تذييل الموقع المطور
+- **Removed Fleet Column (`أسطول العقود`)**: Eliminated redundancy with the main interactive fleet showcase.
+- **New References Column (`مراجعنا وشركاؤنا`)**: Dedicated directory linking directly to all 6 humanitarian and government partners.
+- **Clean 3-Column Grid**: Balanced desktop layout (`1.8fr 1.4fr 1.6fr`) with quick contacts, branding, and legal compliance links.
 
 ---
 
@@ -77,7 +85,7 @@ The website is engineered with a modern, touch-optimized responsive layout acros
 - **Swipeable Fleet Filter & Service Tabs**: Horizontal touch chips with `white-space: nowrap` for instant vehicle category and service switching without text wrapping or layout distortion.
 - **Mobile Luxury Drawer & Dimmed Backdrop**: Smooth animated slide-in drawer with dedicated blur overlay backdrop, body scroll locking, language switcher, quick contacts, and full-width proposal buttons.
 - **Sticky Quick-Action Mobile Bar**: 1-tap direct access to WhatsApp chat, direct phone dialer, and RFP proposal modal pinned to the bottom of mobile screens.
-- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=3.5`) ensuring mobile devices immediately receive the latest responsive design system.
+- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=3.6`) ensuring mobile devices immediately receive the latest responsive design system.
 
 ---
 
@@ -85,5 +93,3 @@ The website is engineered with a modern, touch-optimized responsive layout acros
 - **Public SSH Key**: `~/.ssh/id_ed25519_rammah.pub` (also saved as [`github_ssh_key.pub`](file:///c:/Rammah/github_ssh_key.pub))
 - **Remote Repository**: [`git@github.com:3NZ1I/Ramma7.git`](https://github.com/3NZ1I/Ramma7) (branch `main`)
 - **Custom Domain**: Managed via [`CNAME`](file:///c:/Rammah/CNAME)
-
-
