@@ -520,6 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const fleetCount = document.getElementById('modalFleetCount')?.value || '1';
       const contractPeriod = document.getElementById('modalContractPeriod')?.value || 'Monthly';
       const driverPreference = document.getElementById('modalDriverPref')?.value || 'With Driver';
+      const laborPreference = document.getElementById('modalLaborPref')?.value || 'Not Required';
       const selectedGov = modalGovSelect?.value || activeGovernorateKey;
       const govName = governoratesData[selectedGov] ? ((currentLang === 'ar') ? governoratesData[selectedGov].nameAr : governoratesData[selectedGov].nameEn) : selectedGov;
       const operationalNotes = document.getElementById('modalNotes')?.value || '';
@@ -538,6 +539,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   `📍 المحافظة الأساسية المستهدفة: ${govName}\n` +
                   `📅 مدة التعاقد التقديرية: ${contractPeriod}\n` +
                   `👨‍✈️ خيار السائق: ${driverPreference}\n` +
+                  (laborPreference !== 'Not Required' ? `📦 عمال تحميل وتنزيل: ${laborPreference}\n` : '') +
                   (operationalNotes ? `📝 تفاصيل ونطاق العمل الميداني: ${operationalNotes}\n\n` : `\n`) +
                   `يرجى موافاتنا بالعرض الفني والمالي وشروط التعاقد. شكراً جزيلاً.`;
       } else {
@@ -551,6 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   `📍 Primary Target Governorate: ${govName}\n` +
                   `📅 Expected Contract Term: ${contractPeriod}\n` +
                   `👨‍✈️ Driver Service: ${driverPreference}\n` +
+                  (laborPreference !== 'Not Required' ? `📦 Loading & Unloading Labor: ${laborPreference}\n` : '') +
                   (operationalNotes ? `📝 Operational Notes: ${operationalNotes}\n\n` : `\n`) +
                   `Please provide us with your technical and commercial proposal. Thank you.`;
       }

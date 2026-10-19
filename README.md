@@ -34,18 +34,23 @@ Covering all 14 Syrian administrative districts with real-time mouse hover inter
    - Mid-size AWD / 4x4 SUV built for tough road conditions and executive field operations.
 3. **Hyundai Porter Light Cargo Truck (شاحنة هيونداي بورتر)**:
    - 1.5 to 2.0-ton payload with closed cargo box, flatbed, or refrigerated options for relief aid distribution and urban logistics.
+   - **Optional Labor Crew Available (عمال تحميل وتنزيل)**: Dedicated, trained labor teams for swift loading, sorting, and safe unloading of aid cartons, medical supplies, and freight.
 4. **Hyundai Mighty Heavy Carrier Truck (شاحنة هيونداي مايتي)**:
    - 3.5 to 5.5-ton payload with heavy-duty chassis for long-distance intercity transit, heavy freight, and humanitarian aid convoys.
+   - **Optional Labor Crew Available (عمال تحميل وتنزيل)**: Full loading & unloading logistics crews equipped for heavy pallet handling, warehouse distribution, and cargo transfer.
 5. **Hyundai Corporate Sedans (هيونداي سيدان - إلنترا / سوناتا / أكسنت)**:
    - High-efficiency corporate sedans for daily urban mobility and administrative staff.
 
 ---
 
-## 🤝 Trusted Partners / شركاؤنا
-- **[World Vision International](https://www.wvi.org/)** (International Humanitarian INGO)
-- **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** (Government Entity)
-- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** (Humanitarian Relief Organization)
-- **[منظمة بهار (Bahar Organization)](https://bahar.ngo/)** (Humanitarian & Relief NGO)
+## 🤝 Trusted Partners & INGOs / شركاؤنا والمنظمات الدولية
+Featured with custom high-definition vector brand insignia, interactive hover accents, and official portals:
+- **[World Vision International](https://www.wvi.org/)** — International Humanitarian INGO
+- **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** — Government Entity
+- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** — Humanitarian Relief Organization
+- **[منظمة بهار (Bahar Organization)](https://bahar.ngo/)** — Humanitarian & Relief NGO
+- **[Space Of Peace | مساحة سلام](https://spaceofpeace.org/)** — Peacebuilding & Community Support Organization
+- **[منظمة مهاد (Mehad)](https://www.mehad.fr/ar/)** — French Health & International Solidarity INGO
 
 ---
 
@@ -65,7 +70,7 @@ The website is engineered with a modern, touch-optimized responsive layout acros
 - **Swipeable Fleet Filter & Service Tabs**: Horizontal touch chips with `white-space: nowrap` for instant vehicle category and service switching without text wrapping or layout distortion.
 - **Mobile Luxury Drawer & Dimmed Backdrop**: Smooth animated slide-in drawer with dedicated blur overlay backdrop, body scroll locking, language switcher, quick contacts, and full-width proposal buttons.
 - **Sticky Quick-Action Mobile Bar**: 1-tap direct access to WhatsApp chat, direct phone dialer, and RFP proposal modal pinned to the bottom of mobile screens.
-- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=3.2`) ensuring mobile devices immediately receive the latest responsive design system.
+- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=3.3`) ensuring mobile devices immediately receive the latest responsive design system.
 
 ---
 
@@ -73,4 +78,5 @@ The website is engineered with a modern, touch-optimized responsive layout acros
 - **Public SSH Key**: `~/.ssh/id_ed25519_rammah.pub` (also saved as [`github_ssh_key.pub`](file:///c:/Rammah/github_ssh_key.pub))
 - **Remote Repository**: [`git@github.com:3NZ1I/Ramma7.git`](https://github.com/3NZ1I/Ramma7) (branch `main`)
 - **Custom Domain**: Managed via [`CNAME`](file:///c:/Rammah/CNAME)
+
 
