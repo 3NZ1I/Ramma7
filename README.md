@@ -78,6 +78,18 @@ Featured with dark luxury frosted glass showcase badges (`.partner-showcase-plat
 
 ---
 
+## 📋 Interactive RFQ & Contract Proposal Engine / محرك استدراج عروض الأسعار والتعاقد
+A seamless, synchronized quotation pipeline connecting the Hero quick booking bar with the luxury modal and direct dispatch channels:
+- **Instant Pre-fill Pipeline**: When a client selects their preferences in the quick booking bar (Service category tabs, contract duration, entity type, vehicle model, and operational governorate) and clicks **إرسال طلب استدراج عروض / Send RFQ Request**, the modal automatically opens pre-filled with all selected criteria.
+- **Dedicated "Not Applicable" (N/A) Cargo Labor Option**: Clients can explicitly select "غير منطبق / Not Applicable" for the cargo loading & unloading labor crew (`modalLaborPref`), with smart auto-selection depending on whether a cargo truck or passenger vehicle is selected.
+- **Dual Direct Submission Channels**:
+  1. **WhatsApp Direct Dispatch (`+90 535 251 24 48`)**: Compiles all organization details, focal point contact, fleet specs, driver preference, labor crew, operational governorate, and field comments into an elegantly structured, emoji-bulleted message.
+  2. **Official Email Dispatch (`info@rammah-trvl.com`)**: Automatically generates a formal bilingual email subject and comprehensive commercial inquiry body ready to send in the client's mail application.
+- **Strict Language Awareness**: Automatically forwards messages in professional, formal **Arabic** when browsing in Arabic, or in formal **English** when browsing in English.
+- **Client-Side Validation & Feedback**: Ensures required fields (Organization, Contact Person, Phone, Email) are complete with inline glowing error highlights and smooth success status notifications.
+
+---
+
 ## 📱 Mobile & Tablet Responsive Architecture / التوافق الكامل مع الجوال والأجهزة اللوحية
 The website is engineered with a modern, touch-optimized responsive layout across all device viewports (Smartphones 360px–480px, Phablets, Tablets & iPads 768px–1024px, and Ultra-Wide Desktops):
 - **Zero Horizontal Overflow Guarantee**: Strict `html, body { width: 100%; max-width: 100%; overflow-x: hidden !important; }` combined with off-canvas drawer visibility management (`visibility: hidden; pointer-events: none;`) to prevent RTL coordinate shifting or mobile pinch-zoom expansion.
@@ -87,7 +99,7 @@ The website is engineered with a modern, touch-optimized responsive layout acros
 - **Swipeable Fleet Filter & Service Tabs**: Horizontal touch chips with `white-space: nowrap` for instant vehicle category and service switching without text wrapping or layout distortion.
 - **Mobile Luxury Drawer & Dimmed Backdrop**: Smooth animated slide-in drawer with dedicated blur overlay backdrop, body scroll locking, language switcher, quick contacts, and full-width proposal buttons.
 - **Sticky Quick-Action Mobile Bar**: 1-tap direct access to WhatsApp chat, direct phone dialer, and RFP proposal modal pinned to the bottom of mobile screens.
-- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=3.8`) ensuring mobile devices immediately receive the latest responsive design system.
+- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=4.0`) ensuring mobile devices immediately receive the latest responsive design system.
 
 ---
 

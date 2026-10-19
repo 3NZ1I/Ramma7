@@ -339,11 +339,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Service Tabs in Quick Booking
+  let activeQuickServiceTab = 'with-driver';
   const serviceTabBtns = document.querySelectorAll('.service-tab-btn');
   serviceTabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       serviceTabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      activeQuickServiceTab = btn.getAttribute('data-tab') || 'with-driver';
     });
   });
 
@@ -474,19 +476,73 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===================================================================
   // Modal Open & Close Logic
   // ===================================================================
-  function openModal(carKey, govKey) {
-    if (carKey && fleetData[carKey]) {
-      selectedVehicleKey = carKey;
-      if (modalVehicleSelect) {
-        modalVehicleSelect.value = carKey;
-      }
+  function openModal(param1, param2) {
+    let carKey = 'h1';
+    let govKey = activeGovernorateKey || 'damascus';
+    let duration = 'monthly';
+    let entityType = 'ingo';
+    let driverPref = activeQuickServiceTab || 'with-driver';
+
+    if (typeof param1 === 'object' && param1 !== null) {
+      if (param1.carKey) carKey = param1.carKey;
+      if (param1.govKey) govKey = param1.govKey;
+      if (param1.duration) duration = param1.duration;
+      if (param1.entityType) entityType = param1.entityType;
+      if (param1.driverPref) driverPref = param1.driverPref;
+    } else {
+      if (param1) carKey = param1;
+      if (param2) govKey = param2;
     }
-    if (govKey && modalGovSelect) {
+
+    if (modalVehicleSelect) {
+      modalVehicleSelect.value = carKey;
+    }
+    if (modalGovSelect) {
       modalGovSelect.value = govKey;
     }
+    const modalEntityType = document.getElementById('modalEntityType');
+    if (modalEntityType) {
+      modalEntityType.value = entityType;
+    }
+    const modalContractPeriod = document.getElementById('modalContractPeriod');
+    if (modalContractPeriod) {
+      modalContractPeriod.value = duration;
+    }
+    const modalDriverPref = document.getElementById('modalDriverPref');
+    if (modalDriverPref) {
+      modalDriverPref.value = driverPref;
+    }
+
+    // Smart Labor Preference logic:
+    // If cargo truck (porter/mighty), default to 'required' or 'not-required'
+    // If passenger car (h1, santafe, sedan), default to 'not-applicable'
+    const modalLaborPref = document.getElementById('modalLaborPref');
+    if (modalLaborPref) {
+      if (carKey === 'porter' || carKey === 'mighty') {
+        if (modalLaborPref.value === 'not-applicable') {
+          modalLaborPref.value = 'required';
+        }
+      } else if (carKey !== 'multi') {
+        modalLaborPref.value = 'not-applicable';
+      }
+    }
+
+    // Reset status alert and input errors
+    const modalStatusAlert = document.getElementById('modalStatusAlert');
+    if (modalStatusAlert) {
+      modalStatusAlert.style.display = 'none';
+      modalStatusAlert.className = 'modal-status-alert';
+      modalStatusAlert.textContent = '';
+    }
+    document.querySelectorAll('.form-control.input-error').forEach(el => el.classList.remove('input-error'));
+
     if (bookingModal) {
       bookingModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      const modalOrgName = document.getElementById('modalOrgName');
+      if (modalOrgName) {
+        setTimeout(() => modalOrgName.focus(), 150);
+      }
     }
   }
 
@@ -509,7 +565,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Connect "Request Contract Proposal" buttons
+  // Update labor preference automatically when vehicle select changes
+  if (modalVehicleSelect) {
+    modalVehicleSelect.addEventListener('change', () => {
+      const carKey = modalVehicleSelect.value;
+      const modalLaborPref = document.getElementById('modalLaborPref');
+      if (modalLaborPref) {
+        if (carKey === 'porter' || carKey === 'mighty') {
+          if (modalLaborPref.value === 'not-applicable') {
+            modalLaborPref.value = 'required';
+          }
+        } else if (carKey !== 'multi') {
+          modalLaborPref.value = 'not-applicable';
+        }
+      }
+    });
+  }
+
+  // Connect "Request Contract Proposal" trigger buttons across page
   document.querySelectorAll('.trigger-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -518,71 +591,288 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Quick RFP Form Submit
+  // Quick RFP Form Submit (Transfers all selected items to the pop-up modal)
   const quickRfpForm = document.getElementById('quickRfpForm');
   if (quickRfpForm) {
     quickRfpForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const selectedType = document.getElementById('quickCarType')?.value || 'h1';
       const selectedArea = document.getElementById('quickOperatingArea')?.value || 'damascus';
-      openModal(selectedType, selectedArea);
+      const selectedDuration = document.getElementById('quickDuration')?.value || 'monthly';
+      const selectedEntityType = document.getElementById('quickEntityType')?.value || 'ingo';
+      openModal({
+        carKey: selectedType,
+        govKey: selectedArea,
+        duration: selectedDuration,
+        entityType: selectedEntityType,
+        driverPref: activeQuickServiceTab || 'with-driver'
+      });
     });
   }
 
-  // Modal RFP WhatsApp & Email Submission
+  // ===================================================================
+  // RFQ Data Extraction, Bilingual Message Builders & Submissions
+  // ===================================================================
+  function buildRfqData() {
+    const orgNameInput = document.getElementById('modalOrgName');
+    const contactPersonInput = document.getElementById('modalContactPerson');
+    const phoneInput = document.getElementById('modalPhone');
+    const emailInput = document.getElementById('modalEmail');
+    const statusAlert = document.getElementById('modalStatusAlert');
+
+    const orgName = orgNameInput?.value.trim() || '';
+    const contactPerson = contactPersonInput?.value.trim() || '';
+    const phone = phoneInput?.value.trim() || '';
+    const email = emailInput?.value.trim() || '';
+
+    // Validate required contact fields
+    let hasError = false;
+    let firstErrorEl = null;
+
+    [orgNameInput, contactPersonInput, phoneInput, emailInput].forEach(inp => {
+      if (inp) {
+        if (!inp.value.trim()) {
+          inp.classList.add('input-error');
+          hasError = true;
+          if (!firstErrorEl) firstErrorEl = inp;
+        } else {
+          inp.classList.remove('input-error');
+        }
+      }
+    });
+
+    if (hasError) {
+      if (statusAlert) {
+        statusAlert.className = 'modal-status-alert error';
+        statusAlert.textContent = (currentLang === 'ar')
+          ? 'يرجى تعبئة الحقول الأساسية المطلوبة (اسم الجهة، مسؤول التواصل، رقم الهاتف، والبريد الإلكتروني).'
+          : 'Please complete all required fields (Organization Name, Focal Point, Phone, and Email).';
+        statusAlert.style.display = 'block';
+      }
+      if (firstErrorEl) firstErrorEl.focus();
+      return null;
+    }
+
+    const entityTypeKey = document.getElementById('modalEntityType')?.value || 'ingo';
+    const carKey = modalVehicleSelect?.value || 'h1';
+    const govKey = modalGovSelect?.value || activeGovernorateKey || 'damascus';
+    const fleetCount = document.getElementById('modalFleetCount')?.value || '1';
+    const durationKey = document.getElementById('modalContractPeriod')?.value || 'monthly';
+    const driverPrefKey = document.getElementById('modalDriverPref')?.value || 'with-driver';
+    const laborPrefKey = document.getElementById('modalLaborPref')?.value || 'not-applicable';
+    const notes = document.getElementById('modalNotes')?.value.trim() || '';
+
+    // Localized Sector / Entity Type
+    const entityTypeMap = {
+      'ingo': { ar: 'منظمة إنسانية دولية / محلية (INGO / NGO)', en: 'Humanitarian INGO / Local NGO' },
+      'corp': { ar: 'شركة خاصة / منشأة تجارية', en: 'Private Enterprise / Commercial Entity' },
+      'gov': { ar: 'جهة أو وزارة حكومية / بعثة رسمية', en: 'Government Entity / Official Delegation' }
+    };
+    const entityTypeName = entityTypeMap[entityTypeKey] ? entityTypeMap[entityTypeKey][currentLang] : entityTypeKey;
+
+    // Localized Vehicle Name
+    const carName = (currentLang === 'ar') 
+      ? (fleetData[carKey]?.nameAr || carKey) 
+      : (fleetData[carKey]?.nameEn || carKey);
+
+    // Localized Governorate Name
+    const govName = governoratesData[govKey]
+      ? ((currentLang === 'ar') ? governoratesData[govKey].nameAr : governoratesData[govKey].nameEn)
+      : govKey;
+
+    // Localized Contract Duration
+    const durationMap = {
+      'monthly': { ar: 'عقد شهري (1 إلى 6 أشهر)', en: 'Monthly Term (1 to 6 Months)' },
+      'annual': { ar: 'عقد سنوي قابل للتجديد (12 شهراً فأكثر)', en: 'Annual Renewable Term (12+ Months)' },
+      'project': { ar: 'عقد مخصص لمشروع إنساني / تنموي', en: 'Custom Project / Mission Duration' }
+    };
+    const durationName = durationMap[durationKey] ? durationMap[durationKey][currentLang] : durationKey;
+
+    // Localized Driver Preference / Contract Category
+    const driverPrefMap = {
+      'with-driver': { ar: 'عقود مع سائقين معتمدين ومخصصين', en: 'With Dedicated Certified Driver(s)' },
+      'without-driver': { ar: 'عقود بدون سائق (تشغيل ذاتي للمنظمة)', en: 'Without Driver (Self-Managed Fleet)' },
+      'project-based': { ar: 'عقود مخصصة للمشاريع والبعثات الميدانية', en: 'Project & Mission-Dedicated Flexible Contract' }
+    };
+    const driverPrefName = driverPrefMap[driverPrefKey] ? driverPrefMap[driverPrefKey][currentLang] : driverPrefKey;
+
+    // Localized Labor Preference
+    const laborPrefMap = {
+      'not-applicable': { ar: 'غير منطبق (N/A - الخدمة غير مطلوبة أو المركبة ليست شاحنة)', en: 'Not Applicable (N/A - Non-Cargo Vehicle or Not Needed)' },
+      'not-required': { ar: 'شاحنة فقط (التحميل والتنزيل بمعرفة المنظمة)', en: 'Truck Only (Loading Handled by Client)' },
+      'required': { ar: 'مطلوب طاقم عمال تحميل وتنزيل معتمد مع الشاحنة', en: 'Required: Certified Loading & Unloading Crew with Truck' }
+    };
+    const laborPrefName = laborPrefMap[laborPrefKey] ? laborPrefMap[laborPrefKey][currentLang] : laborPrefKey;
+
+    return {
+      orgName,
+      entityTypeName,
+      contactPerson,
+      phone,
+      email,
+      carName,
+      fleetCount,
+      govName,
+      durationName,
+      driverPrefName,
+      laborPrefName,
+      notes
+    };
+  }
+
+  // Format WhatsApp Message (Bilingual)
+  function formatWhatsAppMessage(data) {
+    if (currentLang === 'ar') {
+      return `مرحباً شركة رماح ترافيل (Rammah Travel)،\n` +
+             `نود تقديم طلب استدراج عروض أسعار لعقد أسطول / شاحنات في سوريا بالبيانات التالية:\n\n` +
+             `📋 بيانات المنشأة ومسؤول التواصل:\n` +
+             `• اسم المنظمة / الجهة: ${data.orgName}\n` +
+             `• نوع المنشأة / القطاع: ${data.entityTypeName}\n` +
+             `• مسؤول التواصل: ${data.contactPerson}\n` +
+             `• هاتف / واتساب: ${data.phone}\n` +
+             `• البريد الإلكتروني: ${data.email}\n\n` +
+             `🚛 تفاصيل الأسطول والتعاقد:\n` +
+             `• طراز المركبة أو الشاحنة: ${data.carName}\n` +
+             `• عدد الوحدات المطلوبة: ${data.fleetCount}\n` +
+             `• المحافظة ونطاق العمل الأساسي: ${data.govName}\n` +
+             `• مدة التعاقد التقديرية: ${data.durationName}\n` +
+             `• تفضيل السائقين: ${data.driverPrefName}\n` +
+             `• خدمة عمال التحميل والتنزيل: ${data.laborPrefName}\n\n` +
+             (data.notes ? `📝 تفاصيل ونطاق العمل الميداني:\n${data.notes}\n\n` : '') +
+             `يرجى موافاتنا بالعرض الفني والمالي وشروط التعاقد. شكراً جزيلاً.`;
+    } else {
+      return `Hello Rammah Travel Fleet Contracting Syria,\n` +
+             `We would like to submit an official Request for Quotation (RFQ) for fleet / truck contracting in Syria with the following details:\n\n` +
+             `📋 Organization & Contact Details:\n` +
+             `• Organization / Company: ${data.orgName}\n` +
+             `• Sector / Entity Type: ${data.entityTypeName}\n` +
+             `• Focal Point / Contact Person: ${data.contactPerson}\n` +
+             `• Phone / WhatsApp: ${data.phone}\n` +
+             `• Official Email: ${data.email}\n\n` +
+             `🚛 Fleet & Operational Requirements:\n` +
+             `• Vehicle / Truck Model: ${data.carName}\n` +
+             `• Number of Units: ${data.fleetCount}\n` +
+             `• Primary Target Governorate: ${data.govName}\n` +
+             `• Expected Contract Term: ${data.durationName}\n` +
+             `• Driver Preference: ${data.driverPrefName}\n` +
+             `• Loading & Unloading Labor: ${data.laborPrefName}\n\n` +
+             (data.notes ? `📝 Operational Notes & Scope of Work:\n${data.notes}\n\n` : '') +
+             `Please provide us with your formal technical and commercial proposal. Thank you.`;
+    }
+  }
+
+  // Format Email Subject and Body (Bilingual)
+  function formatEmailPayload(data) {
+    let subject = '';
+    let body = '';
+
+    if (currentLang === 'ar') {
+      subject = `طلب استدراج عروض وأسعار أسطول في سوريا - ${data.orgName} - ${data.carName}`;
+      body = `السادة إدارة العقود والعمليات في شركة رماح ترافيل المحترمين،\n\n` +
+             `تحية طيبة وبعد،\n\n` +
+             `نود إرسال طلب استدراج عروض وأسعار لتعاقد وتشغيل أسطول مركبات / شاحنات في سوريا وفق المعطيات التالية:\n\n` +
+             `1. بيانات المنشأة وجهة التواصل:\n` +
+             `   - اسم المنظمة / الشركة: ${data.orgName}\n` +
+             `   - نوع المنشأة / القطاع: ${data.entityTypeName}\n` +
+             `   - مسؤول التواصل: ${data.contactPerson}\n` +
+             `   - الهاتف / الواتساب: ${data.phone}\n` +
+             `   - البريد الإلكتروني: ${data.email}\n\n` +
+             `2. المتطلبات التشغيلية للأسطول:\n` +
+             `   - طراز المركبة أو الشاحنة: ${data.carName}\n` +
+             `   - عدد المركبات / الشاحنات: ${data.fleetCount}\n` +
+             `   - المحافظة ونطاق العمل الأساسي: ${data.govName}\n` +
+             `   - مدة التعاقد المتوقعة: ${data.durationName}\n` +
+             `   - تفضيل السائقين وفئة التعاقد: ${data.driverPrefName}\n` +
+             `   - خدمة عمال تحميل وتنزيل الشاحنات والبضائع: ${data.laborPrefName}\n\n` +
+             (data.notes ? `3. تفاصيل ونطاق العمل الميداني:\n   ${data.notes}\n\n` : '') +
+             `نرجو منكم موافاتنا بالعرض الفني والمالي وجدول الصيانة والدعم في أقرب وقت.\n\n` +
+             `مع خالص التحية والتقدير،\n` +
+             `${data.contactPerson}\n` +
+             `${data.orgName}\n` +
+             `${data.phone}`;
+    } else {
+      subject = `RFQ / Fleet Contracting Proposal Syria - ${data.orgName} - ${data.carName}`;
+      body = `Dear Rammah Travel Operations & Commercial Team,\n\n` +
+             `We would like to submit an official Request for Quotation (RFQ) for vehicle fleet and cargo truck contracting in Syria:\n\n` +
+             `1. Organization & Contact Information:\n` +
+             `   - Organization / Entity: ${data.orgName}\n` +
+             `   - Sector / Entity Type: ${data.entityTypeName}\n` +
+             `   - Focal Point: ${data.contactPerson}\n` +
+             `   - Phone / WhatsApp: ${data.phone}\n` +
+             `   - Official Email: ${data.email}\n\n` +
+             `2. Fleet & Contracting Specifications:\n` +
+             `   - Vehicle / Truck Model: ${data.carName}\n` +
+             `   - Quantity / Units: ${data.fleetCount}\n` +
+             `   - Primary Operating Governorate: ${data.govName}\n` +
+             `   - Expected Contract Term: ${data.durationName}\n` +
+             `   - Driver Service Preference: ${data.driverPrefName}\n` +
+             `   - Cargo Loading / Unloading Labor: ${data.laborPrefName}\n\n` +
+             (data.notes ? `3. Scope of Work & Operational Notes:\n   ${data.notes}\n\n` : '') +
+             `Please review these requirements and provide us with your formal technical and commercial proposal.\n\n` +
+             `Best regards,\n` +
+             `${data.contactPerson}\n` +
+             `${data.orgName}\n` +
+             `${data.phone}`;
+    }
+
+    return { subject, body };
+  }
+
+  // Event Listeners for WhatsApp & Email Submit Buttons
+  const btnSubmitWhatsApp = document.getElementById('btnSubmitWhatsApp');
+  const btnSubmitEmail = document.getElementById('btnSubmitEmail');
+  const modalStatusAlert = document.getElementById('modalStatusAlert');
+
+  if (btnSubmitWhatsApp) {
+    btnSubmitWhatsApp.addEventListener('click', (e) => {
+      e.preventDefault();
+      const data = buildRfqData();
+      if (!data) return;
+
+      const message = formatWhatsAppMessage(data);
+      const whatsappUrl = `https://wa.me/${CONTACT_PHONE_WHATSAPP}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+
+      if (modalStatusAlert) {
+        modalStatusAlert.className = 'modal-status-alert success';
+        modalStatusAlert.textContent = (currentLang === 'ar')
+          ? 'تم تجهيز وتوجيه طلبك بنجاح عبر واتساب كونسيرج!'
+          : 'Your RFQ request has been generated and forwarded via WhatsApp!';
+        modalStatusAlert.style.display = 'block';
+      }
+
+      setTimeout(() => closeModal(), 1600);
+    });
+  }
+
+  if (btnSubmitEmail) {
+    btnSubmitEmail.addEventListener('click', (e) => {
+      e.preventDefault();
+      const data = buildRfqData();
+      if (!data) return;
+
+      const { subject, body } = formatEmailPayload(data);
+      const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoUrl;
+
+      if (modalStatusAlert) {
+        modalStatusAlert.className = 'modal-status-alert success';
+        modalStatusAlert.textContent = (currentLang === 'ar')
+          ? 'تم تجهيز مسودة البريد الإلكتروني الرسمي بنجاح!'
+          : 'Official RFQ email draft has been generated successfully!';
+        modalStatusAlert.style.display = 'block';
+      }
+
+      setTimeout(() => closeModal(), 1600);
+    });
+  }
+
   if (rfpForm) {
     rfpForm.addEventListener('submit', (e) => {
       e.preventDefault();
-
-      const orgName = document.getElementById('modalOrgName')?.value || '';
-      const contactPerson = document.getElementById('modalContactPerson')?.value || '';
-      const phone = document.getElementById('modalPhone')?.value || '';
-      const email = document.getElementById('modalEmail')?.value || '';
-      const carKey = modalVehicleSelect?.value || 'h1';
-      const fleetCount = document.getElementById('modalFleetCount')?.value || '1';
-      const contractPeriod = document.getElementById('modalContractPeriod')?.value || 'Monthly';
-      const driverPreference = document.getElementById('modalDriverPref')?.value || 'With Driver';
-      const laborPreference = document.getElementById('modalLaborPref')?.value || 'Not Required';
-      const selectedGov = modalGovSelect?.value || activeGovernorateKey;
-      const govName = governoratesData[selectedGov] ? ((currentLang === 'ar') ? governoratesData[selectedGov].nameAr : governoratesData[selectedGov].nameEn) : selectedGov;
-      const operationalNotes = document.getElementById('modalNotes')?.value || '';
-
-      const carName = (currentLang === 'ar') ? fleetData[carKey]?.nameAr : fleetData[carKey]?.nameEn;
-
-      let message = '';
-      if (currentLang === 'ar') {
-        message = `مرحباً شركة رماح ترافيل (Rammah Travel)، نود طلب استدراج عرض أسعار لعقد أسطول / شاحنات في سوريا:\n\n` +
-                  `🏢 اسم الجهة / المنظمة / الشركة: ${orgName}\n` +
-                  `👤 مسؤول التواصل: ${contactPerson}\n` +
-                  `📱 هاتف التواصل: ${phone}\n` +
-                  `✉️ البريد الرسمي: ${email}\n` +
-                  `🚗 طراز المركبة أو الشاحنة: ${carName}\n` +
-                  `🔢 عدد المركبات / الشاحنات: ${fleetCount}\n` +
-                  `📍 المحافظة الأساسية المستهدفة: ${govName}\n` +
-                  `📅 مدة التعاقد التقديرية: ${contractPeriod}\n` +
-                  `👨‍✈️ خيار السائق: ${driverPreference}\n` +
-                  (laborPreference !== 'Not Required' ? `📦 عمال تحميل وتنزيل: ${laborPreference}\n` : '') +
-                  (operationalNotes ? `📝 تفاصيل ونطاق العمل الميداني: ${operationalNotes}\n\n` : `\n`) +
-                  `يرجى موافاتنا بالعرض الفني والمالي وشروط التعاقد. شكراً جزيلاً.`;
-      } else {
-        message = `Hello Rammah Travel Fleet Contracting, We would like to request an official RFP / Contract Proposal in Syria:\n\n` +
-                  `🏢 Organization / Company: ${orgName}\n` +
-                  `👤 Focal Point / Contact: ${contactPerson}\n` +
-                  `📱 Contact Phone: ${phone}\n` +
-                  `✉️ Official Email: ${email}\n` +
-                  `🚗 Vehicle / Truck Model: ${carName}\n` +
-                  `🔢 Number of Units: ${fleetCount}\n` +
-                  `📍 Primary Target Governorate: ${govName}\n` +
-                  `📅 Expected Contract Term: ${contractPeriod}\n` +
-                  `👨‍✈️ Driver Service: ${driverPreference}\n` +
-                  (laborPreference !== 'Not Required' ? `📦 Loading & Unloading Labor: ${laborPreference}\n` : '') +
-                  (operationalNotes ? `📝 Operational Notes: ${operationalNotes}\n\n` : `\n`) +
-                  `Please provide us with your technical and commercial proposal. Thank you.`;
+      if (btnSubmitWhatsApp) {
+        btnSubmitWhatsApp.click();
       }
-
-      const whatsappUrl = `https://wa.me/${CONTACT_PHONE_WHATSAPP}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, '_blank');
-      closeModal();
     });
   }
 
