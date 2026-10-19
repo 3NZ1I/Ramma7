@@ -933,13 +933,13 @@ html[dir="rtl"] .fleet-rate-badge {
   box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
 }
 
-/* Ensure Takaful Al Sham & Space of Peace logos render 100% solid crisp white */
+/* Enhanced stroke luminescence for pure-white transparent partner logos */
 .badge-tas .partner-logo-display {
-  filter: brightness(0) invert(1) drop-shadow(0 0 1.2px rgba(255, 255, 255, 0.85)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.85)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
 }
 
 .badge-sop .partner-logo-display {
-  filter: brightness(0) invert(1) drop-shadow(0 0 1.2px rgba(255, 255, 255, 0.85)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.85)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
 }
 
 .partner-showcase-plate.badge-bahar:hover,

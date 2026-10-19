@@ -49,7 +49,7 @@ Covering all 14 Syrian administrative districts with real-time mouse hover inter
 Featured with dark luxury frosted glass showcase badges (`.partner-showcase-plate`), 100% crisp vector-grade SVG typography, brand-tailored hover lighting, and official direct portals:
 - **[World Vision International](https://www.wvi.org/)** — Crisp white wordmark with radiant orange brand flame on deep obsidian glass (`wv.svg`)
 - **[وزارة الثقافة السورية - Syrian Ministry of Culture](https://moc.gov.sy/)** — Official Syrian ministerial coat of arms in royal gold (`#d4af37`) with crisp white calligraphy (`moc.svg`)
-- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** — High-contrast pure white vector SVG (`tas.svg`) with dual CSS safety filter (`brightness(0) invert(1)`) and emerald hover aura
+- **[منظمة تكافل الشام الخيرية (Takaful Al Sham)](https://takafulalsham.org/)** — Dedicated high-contrast pure white transparent asset (`takaful.png?v=3.8` & `tas.png`) with clean luminescence drop-shadows and emerald hover aura
 - **[منظمة بهار (Bahar Organization)](https://bahar.ngo/)** — Official white vector typography and brand mark with oceanic azure glow (`bahar.svg`)
 - **[مساحة سلام | Space Of Peace](https://spaceofpeace.org/)** — High-contrast pure white dove insignia and bilingual wordmark (`sop.svg`) with vibrant teal accent
 - **[منظمة مهاد الفرنسية (Mehad)](https://www.mehad.fr/ar/)** — Official clean baseline white SVG logo (`mehad.svg`) with medical solidarity crimson accent
@@ -87,7 +87,7 @@ The website is engineered with a modern, touch-optimized responsive layout acros
 - **Swipeable Fleet Filter & Service Tabs**: Horizontal touch chips with `white-space: nowrap` for instant vehicle category and service switching without text wrapping or layout distortion.
 - **Mobile Luxury Drawer & Dimmed Backdrop**: Smooth animated slide-in drawer with dedicated blur overlay backdrop, body scroll locking, language switcher, quick contacts, and full-width proposal buttons.
 - **Sticky Quick-Action Mobile Bar**: 1-tap direct access to WhatsApp chat, direct phone dialer, and RFP proposal modal pinned to the bottom of mobile screens.
-- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=3.6`) ensuring mobile devices immediately receive the latest responsive design system.
+- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=3.8`) ensuring mobile devices immediately receive the latest responsive design system.
 
 ---
 
