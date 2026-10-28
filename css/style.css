@@ -1880,21 +1880,30 @@ html[dir="rtl"] .modal-close-btn {
   flex-wrap: wrap;
 }
 
-.legal-trigger-btn {
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color var(--transition-fast);
+.legal-trigger-btn,
+button.legal-trigger-btn,
+a.legal-trigger-btn {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 0.9rem !important;
+  font-family: inherit !important;
+  color: var(--text-muted) !important;
+  cursor: pointer !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  transition: color var(--transition-fast) !important;
+  display: inline-block !important;
+  line-height: inherit !important;
 }
 
-.legal-trigger-btn:hover {
-  color: var(--gold-primary);
+.legal-trigger-btn:hover,
+button.legal-trigger-btn:hover,
+a.legal-trigger-btn:hover {
+  color: var(--gold-primary) !important;
 }
 
 /* ===================================================================

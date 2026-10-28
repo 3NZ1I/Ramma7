@@ -19,8 +19,8 @@
   <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=4.0">
-  <link rel="stylesheet" href="css/animations.css?v=4.0">
+  <link rel="stylesheet" href="css/style.css?v=5.0">
+  <link rel="stylesheet" href="css/animations.css?v=5.0">
 </head>
 <body>
 
@@ -43,7 +43,7 @@
       <div class="top-bar-right">
         <div class="top-bar-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          <a href="https://wa.me/963949555207" target="_blank" style="color: inherit; text-decoration: none;" data-i18n="topPhone">+963 949 555 207</a>
+          <a href="https://wa.me/963949555207" target="_blank" dir="ltr" style="direction: ltr; unicode-bidi: isolate; color: inherit; text-decoration: none;" data-i18n="topPhone">+963 949 555 207</a>
         </div>
         <button id="langToggle" class="lang-toggle" aria-label="Toggle Language">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
@@ -1101,9 +1101,9 @@
       <div class="footer-bottom">
         <p data-i18n="footerCopyright">© 2026 شركة رماح ترافيل. جميع الحقوق محفوظة. عقود وتشغيل أساطيل المركبات والشاحنات في سوريا.</p>
         <div class="footer-legal-links" style="display: flex; gap: 20px; flex-wrap: wrap;">
-          <button type="button" class="footer-link legal-trigger-btn" data-legal-tab="privacy" data-i18n="footerPrivacy">سياسة الخصوصية</button>
-          <button type="button" class="footer-link legal-trigger-btn" data-legal-tab="terms" data-i18n="footerTerms">شروط وأحكام التعاقد</button>
-          <button type="button" class="footer-link legal-trigger-btn" data-legal-tab="compliance" data-i18n="footerCompliance">معايير امتثال المنظمات (INGO)</button>
+          <a href="javascript:void(0)" onclick="window.openLegalModal('privacy'); return false;" class="footer-link legal-trigger-btn" data-legal-tab="privacy" data-i18n="footerPrivacy" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; cursor: pointer;">سياسة الخصوصية</a>
+          <a href="javascript:void(0)" onclick="window.openLegalModal('terms'); return false;" class="footer-link legal-trigger-btn" data-legal-tab="terms" data-i18n="footerTerms" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; cursor: pointer;">شروط وأحكام التعاقد</a>
+          <a href="javascript:void(0)" onclick="window.openLegalModal('compliance'); return false;" class="footer-link legal-trigger-btn" data-legal-tab="compliance" data-i18n="footerCompliance" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; cursor: pointer;">معايير امتثال المنظمات (INGO)</a>
         </div>
       </div>
     </div>
@@ -1295,7 +1295,7 @@
   </aside>
 
   <!-- Scripts -->
-  <script src="js/translations.js?v=4.0"></script>
-  <script src="js/main.js?v=4.0"></script>
+  <script src="js/translations.js?v=5.0"></script>
+  <script src="js/main.js?v=5.0"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@ const translations = {
   en: {
     // Top Bar
     topLocation: "Operational Hubs Across All 14 Syrian Governorates",
-    topPhone: "Direct & WhatsApp: +963 949 555 207",
+    topPhone: "+963 949 555 207",
     topEmail: "info@rammah-trvl.com",
     topConcierge: "Enterprise, INGO & Government Fleet Contracting",
 
@@ -249,6 +249,7 @@ const translations = {
     footerColServices: "Contracting Services",
     footerColContact: "Contact & Inquiries",
     footerAddress: "Damascus, Syrian Arab Republic • Operating Hubs Across All 14 Governorates",
+    footerHours: "Contracting Department: Sat - Thu (8:00 AM - 6:00 PM)",
         footerCopyright: "© 2026 Rammah Travel Co. All rights reserved. Specialized Enterprise & INGO Vehicle Contracting in Syria.",
     footerPrivacy: "Privacy Policy",
     footerTerms: "Terms of Contracting",
@@ -305,7 +306,7 @@ const translations = {
   ar: {
     // Top Bar
     topLocation: "مراكز تشغيل وأسطول تغطي كافة المحافظات السورية الـ 14",
-    topPhone: "هاتف وواتساب مباشر: \u200E+963 949 555 207",
+    topPhone: "+963 949 555 207",
     topEmail: "info@rammah-trvl.com",
     topConcierge: "عقود أساطيل وشاحنات للمنظمات والشركات والجهات الحكومية",
 
@@ -546,6 +547,7 @@ const translations = {
     footerColServices: "خدمات التعاقد",
     footerColContact: "التواصل والاستفسارات",
     footerAddress: "دمشق، الجمهورية العربية السورية • مراكز تشغيل تغطي كافة المحافظات الـ 14",
+    footerHours: "قسم العقود: السبت - الخميس (8:00 صباحاً - 6:00 مساءً)",
         footerCopyright: "© 2026 شركة رماح ترافيل. جميع الحقوق محفوظة. عقود وتشغيل أساطيل المركبات والشاحنات في سوريا.",
     footerPrivacy: "سياسة الخصوصية",
     footerTerms: "شروط وأحكام التعاقد",

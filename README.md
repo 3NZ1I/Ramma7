@@ -117,7 +117,7 @@ The website is engineered with a modern, touch-optimized responsive layout acros
 - **Swipeable Fleet Filter & Service Tabs**: Horizontal touch chips with `white-space: nowrap` for instant vehicle category and service switching without text wrapping or layout distortion.
 - **Mobile Luxury Drawer & Dimmed Backdrop**: Smooth animated slide-in drawer with dedicated blur overlay backdrop, body scroll locking, language switcher, quick contacts, and full-width proposal buttons.
 - **Sticky Quick-Action Mobile Bar**: 1-tap direct access to WhatsApp chat, direct phone dialer, and RFP proposal modal pinned to the bottom of mobile screens.
-- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=4.0`) ensuring mobile devices immediately receive the latest responsive design system.
+- **Cache-Busting Asset Versioning**: Stylesheets and scripts include version query parameters (`?v=5.0`) ensuring mobile devices immediately receive the latest responsive design system.
 
 ---
 

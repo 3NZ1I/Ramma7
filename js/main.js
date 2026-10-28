@@ -976,6 +976,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Expose Legal Modal functions to window for robust inline access
+  window.openLegalModal = openLegalModal;
+  window.closeLegalModal = closeLegalModal;
+  window.switchLegalTab = switchLegalTab;
+
   // Initial application of default language & map state
   applyLanguage(currentLang);
   updateGovernorateDisplay('damascus');
