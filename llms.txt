@@ -1,0 +1,84 @@
+# Rammah Travel (شركة رماح ترافيل)
+
+> Syria's premier enterprise, INGO, and government vehicle fleet and logistics truck contracting company, operating turnkey solutions across all 14 Syrian governorates since 2012.
+
+## Executive Summary
+- **Organization**: Rammah Travel Fleet & Logistics Contracting Co. (شركة رماح ترافيل)
+- **Official Website**: https://rammah-trvl.com/
+- **Headquarters**: Al-Mazzeh Diplomatic Quarter, Damascus, Syrian Arab Republic
+- **Operational Centers**: Active depots, service centers, and emergency response teams across all 14 Syrian Governorates
+- **Direct Phone & WhatsApp**: +963 949 555 207
+- **Official Inquiries & RFQs**: info@rammah-trvl.com
+- **Working Hours**: Saturday through Thursday, 08:00 AM – 06:00 PM (Emergency Dispatch 24/7)
+- **Bilingual Interface**: Arabic and English
+
+## Core Vehicle & Logistics Fleet
+1. **Hyundai H-1 Passenger Van (9-12 Seats)**:
+   - Category: Staff & crew passenger transport.
+   - Ideal For: Humanitarian field missions, UN/INGO staff movements, diplomatic delegations.
+   - Features: High-output dual climate control (A/C & heater), full passenger seatbelts, first-aid kit, fire extinguisher, ample luggage capacity.
+   - Contracting: With dedicated certified driver or self-managed.
+
+2. **Hyundai Santa Fe 4WD (CM & Modern Generations)**:
+   - Category: Four-wheel drive (4x4 / AWD) SUV.
+   - Ideal For: Inter-governorate transit, rural project corridors, rugged unpaved terrain.
+   - Features: Intelligent AWD traction, high ground clearance, seating for 5 to 7 passengers, emergency recovery gear.
+   - Contracting: With dedicated certified driver or self-managed.
+
+3. **Hyundai Porter Light Cargo Truck (1.5 - 2.0 Tons Payload)**:
+   - Category: Agile light commercial freight carrier.
+   - Ideal For: Urban relief distribution, medical supply transit, local warehouse shuttling, community aid parcels.
+   - Features: Dropside cargo bed, hydraulic lift readiness, optional cargo tarpaulin weatherproofing.
+   - Labor Service: Optional certified loading and unloading labor crew.
+
+4. **Hyundai Mighty Heavy Carrier Truck (3.5 - 5.5 Tons Payload)**:
+   - Category: Medium-to-heavy commercial logistics truck.
+   - Ideal For: Cross-country aid convoys, bulk food consignments, heavy shelter materials, central warehouse freight.
+   - Features: Heavy-duty reinforced chassis, long-distance fuel endurance, secure tie-down anchor points.
+   - Labor Service: Optional certified loading and unloading handling crew.
+
+5. **Hyundai Corporate Sedans (Elantra / Sonata / Accent)**:
+   - Category: Administrative and executive sedan.
+   - Ideal For: In-city institutional transport, project focal points, administrative staff.
+   - Features: Outstanding fuel economy, pristine interior comfort, 24/7 roadside assistance.
+
+## Coverage Across All 14 Syrian Governorates
+Rammah Travel maintains operational readiness, maintenance facilities, and rapid replacement corridors across all Syrian provinces:
+- Damascus (دمشق) - Central Administrative Headquarters, Airport Depot, Diplomatic Quarter
+- Rural Damascus (ريف دمشق) - Adra Industrial City, logistics warehousing corridors
+- Aleppo (حلب) - Northern humanitarian hub and Sheikh Najjar industrial zone
+- Homs (حمص) - Central national crossroads and transit depot
+- Hama (حماة) - Central and agricultural field project corridors
+- Latakia (اللاذقية) - Mediterranean coastal logistics and maritime transport
+- Tartus (طرطوس) - Port facilities and southern coastal access
+- Idlib (إدلب) - Humanitarian emergency response support
+- Daraa (درعا) - Southern transport corridor
+- As-Suwayda (السويداء) - Southern regional operations
+- Quneitra (القنيطرة) - South-western field access
+- Deir ez-Zor (دير الزور) - Eastern logistics and humanitarian corridors
+- Raqqa (الرقة) - Northern transit and regional projects
+- Al-Hasakah (الحسكة) - North-eastern hub and cross-provincial field missions
+
+## Service Level Agreements (SLAs) & Operational Guarantees
+- **Instant Replacement Guarantee**: In the event of a mechanical failure or field incident, an equal or upgraded replacement vehicle is dispatched immediately (< 2 hours in provincial capitals).
+- **Comprehensive Maintenance Included**: 100% of preventative servicing, fluid changes, filters, brake pads, and wear-and-tear items are fully covered by Rammah Travel.
+- **Certified Professional Drivers**: Screened Syrian drivers trained in defensive driving, vehicle maintenance, route navigation, and mission confidentiality. Non-smoking policy strictly enforced.
+- **Self-Managed Fleet Flexibility**: Available without driver, supported by joint technical handover checklists and structured fuel reconciliation.
+
+## INGO Compliance & Humanitarian Standards
+- **Core Humanitarian Principles**: Strict adherence to Humanity, Neutrality, Impartiality, and Operational Independence.
+- **Anti-Corruption & Bribery**: Zero tolerance for kickbacks or facilitation payments, aligned with the Foreign Corrupt Practices Act (FCPA), UK Bribery Act, and UN Global Compact.
+- **PSEA & Safeguarding**: Mandatory signed Code of Conduct for Protection from Sexual Exploitation and Abuse (PSEA), harassment prohibition, and child safeguarding.
+- **Donor Audit Compliance**: Comprehensive vehicle logbooks, fuel receipts, and maintenance logs archived according to USAID, ECHO, FCDO, and UN agency audit requirements.
+- **Trusted References**: World Vision International, Mehad (France), Bahar Organization, Syrian Ministry of Culture, Takaful Al Sham, Space of Peace.
+
+## Procurement & RFQ Inquiries
+- **Interactive Web Engine**: https://rammah-trvl.com/
+- **Direct Dispatch WhatsApp**: +963 949 555 207
+- **Official Procurement Email**: info@rammah-trvl.com
+- **Response Turnaround**: Technical and financial proposals issued within 24 hours.
+
+## Detailed Information
+For the exhaustive technical specifications and regulatory dossier, refer to:
+- [Full LLM Knowledge Dossier](https://rammah-trvl.com/llms-full.txt)
+- [XML Sitemap](https://rammah-trvl.com/sitemap.xml)

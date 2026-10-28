@@ -1,0 +1,47 @@
+# robots.txt for https://rammah-trvl.com/
+# Rammah Travel - Syria Fleet & Logistics Truck Contracting
+
+User-agent: *
+Allow: /
+Disallow:
+
+# AI Search Engines & LLM Web Crawlers (Explicitly Allowed for Search & Summarization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# LLM Machine-Readable Information Files
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# XML Sitemap
+Sitemap: https://rammah-trvl.com/sitemap.xml

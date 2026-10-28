@@ -121,6 +121,26 @@ The website is engineered with a modern, touch-optimized responsive layout acros
 
 ---
 
+## 🔍 Search Engine & AI Engine Optimization (SEO & AEO) / تحسين محركات البحث والذكاء الاصطناعي
+The website features an enterprise-grade optimization suite engineered for traditional search engines (Google, Bing, Yandex) and generative AI answer engines (ChatGPT Search, Perplexity AI, Google Gemini, Claude, Microsoft Copilot):
+- **Full JSON-LD Schema.org Graph**:
+  - `AutoRental`, `ProfessionalService`, and `Organization` schemas defining legal identity, geo-coordinates, Damascus headquarters, 14 governorate service regions (`areaServed`), accepted payment methods, and contact channels.
+  - Detailed `OfferCatalog` indexing all 5 vehicle and logistics truck categories (H-1, Santa Fe 4WD, Porter, Mighty, Sedans).
+  - Comprehensive `FAQPage` schema addressing critical procurement, SLA, and humanitarian compliance inquiries directly ingested by Google AI Overviews and Perplexity summaries.
+- **AI Agent Discovery (`/llms.txt` & `/llms-full.txt`)**:
+  - Adopted the modern `llms.txt` standard to provide structured, high-density facts for LLMs and AI search bots to prevent hallucinations and ensure accurate citations.
+  - Accompanied by [`llms-full.txt`](file:///c:/Rammah/llms-full.txt) providing deep context on vehicle specifications, governorate response times, and compliance frameworks.
+- **AI & Web Crawler Permissions ([`robots.txt`](file:///c:/Rammah/robots.txt))**:
+  - Explicit directives permitting indexing by AI bots (`GPTBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, etc.) while mapping the sitemap and LLM documentation.
+- **XML Sitemap ([`sitemap.xml`](file:///c:/Rammah/sitemap.xml))**:
+  - Validated sitemap featuring priority ratings, update frequencies, and bilingual `xhtml:link` alternate language declarations (`ar`, `en`, `x-default`).
+- **Complete OpenGraph & Twitter Cards**:
+  - High-resolution 1200x630 social share cards with localized Arabic (`ar_SY`) and English (`en_US`) alternates, secure image URLs, and descriptive alt attributes.
+- **Canonical & Hreflang Tags**:
+  - Strictly prevents duplicate content penalties and instructs international search engines on regional Arabic and English routing.
+
+---
+
 ## 🔑 GitHub SSH Key & Domain Configuration
 - **Public SSH Key**: `~/.ssh/id_ed25519_rammah.pub` (also saved as [`github_ssh_key.pub`](file:///c:/Rammah/github_ssh_key.pub))
 - **Remote Repository**: [`git@github.com:3NZ1I/Ramma7.git`](https://github.com/3NZ1I/Ramma7) (branch `main`)
