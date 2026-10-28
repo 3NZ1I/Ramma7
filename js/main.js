@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentLang = localStorage.getItem('rammah_lang') || 'ar'; // Default Arabic for Syrian audience
 
   // Primary Contact Info
-  const CONTACT_PHONE_WHATSAPP = '905352512448';
+  const CONTACT_PHONE_WHATSAPP = '963949555207';
   const CONTACT_EMAIL = 'info@rammah-trvl.com';
 
   const fleetData = {
@@ -892,6 +892,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.reveal-on-scroll').forEach(el => {
     observer.observe(el);
+  });
+
+  // ===================================================================
+  // Legal & INGO Compliance Modal Engine
+  // ===================================================================
+  const legalModal = document.getElementById('legalModal');
+  const closeLegalModalBtn = document.getElementById('closeLegalModalBtn');
+  const btnDismissLegalModal = document.getElementById('btnDismissLegalModal');
+  const legalTriggers = document.querySelectorAll('.legal-trigger-btn');
+  const legalTabBtns = document.querySelectorAll('.legal-tab-btn');
+  const legalTabContents = {
+    privacy: document.getElementById('tabContentPrivacy'),
+    terms: document.getElementById('tabContentTerms'),
+    compliance: document.getElementById('tabContentCompliance')
+  };
+
+  function switchLegalTab(tabKey) {
+    legalTabBtns.forEach(btn => {
+      const isTarget = btn.getAttribute('data-tab-target') === tabKey;
+      btn.classList.toggle('active', isTarget);
+      btn.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+    });
+
+    Object.entries(legalTabContents).forEach(([key, contentEl]) => {
+      if (contentEl) {
+        contentEl.classList.toggle('active', key === tabKey);
+      }
+    });
+  }
+
+  function openLegalModal(targetTab = 'privacy') {
+    if (legalModal) {
+      switchLegalTab(targetTab);
+      legalModal.classList.add('active');
+      legalModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeLegalModal() {
+    if (legalModal) {
+      legalModal.classList.remove('active');
+      legalModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
+
+  legalTriggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tab = btn.getAttribute('data-legal-tab') || 'privacy';
+      openLegalModal(tab);
+    });
+  });
+
+  legalTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.getAttribute('data-tab-target');
+      switchLegalTab(tab);
+    });
+  });
+
+  if (closeLegalModalBtn) {
+    closeLegalModalBtn.addEventListener('click', closeLegalModal);
+  }
+  if (btnDismissLegalModal) {
+    btnDismissLegalModal.addEventListener('click', closeLegalModal);
+  }
+  if (legalModal) {
+    legalModal.addEventListener('click', (e) => {
+      if (e.target === legalModal) {
+        closeLegalModal();
+      }
+    });
+  }
+
+  // Close modals on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (legalModal && legalModal.classList.contains('active')) closeLegalModal();
+      if (bookingModal && bookingModal.classList.contains('active')) closeModal();
+    }
   });
 
   // Initial application of default language & map state

@@ -8,7 +8,7 @@ const translations = {
   en: {
     // Top Bar
     topLocation: "Operational Hubs Across All 14 Syrian Governorates",
-    topPhone: "Direct & WhatsApp: +90 535 251 24 48",
+    topPhone: "Direct & WhatsApp: +963 949 555 207",
     topEmail: "info@rammah-trvl.com",
     topConcierge: "Enterprise, INGO & Government Fleet Contracting",
 
@@ -239,7 +239,7 @@ const translations = {
     labelTargetGovernorate: "Primary Syrian Governorate / Operating Hub",
     labelNotes: "Project Scope & Field Operational Notes",
     placeholderNotes: "E.g., Target governorates, cargo type, estimated monthly mileage, special project requirements...",
-    btnSubmitWhatsApp: "Send Request via WhatsApp (+90 535 251 24 48)",
+    btnSubmitWhatsApp: "Send Request via WhatsApp (+963 949 555 207)",
     btnSubmitEmail: "Send Request via Official Email (info@rammah-trvl.com)",
 
     // Footer
@@ -249,7 +249,51 @@ const translations = {
     footerColServices: "Contracting Services",
     footerColContact: "Contact & Inquiries",
     footerAddress: "Damascus, Syrian Arab Republic • Operating Hubs Across All 14 Governorates",
-    footerCopyright: "© 2026 Rammah Travel Co. All rights reserved. Specialized Enterprise & INGO Vehicle Contracting in Syria.",
+        footerCopyright: "© 2026 Rammah Travel Co. All rights reserved. Specialized Enterprise & INGO Vehicle Contracting in Syria.",
+    footerPrivacy: "Privacy Policy",
+    footerTerms: "Terms of Contracting",
+    footerCompliance: "INGO Compliance",
+
+    // Legal & Compliance Framework Modal
+    legalBadgePill: "OFFICIAL OPERATING & INGO STANDARDS",
+    legalModalTitle: "Legal, Contracting & INGO Compliance Framework",
+    legalModalSubtitle: "Certified operational standards, field data confidentiality, and international humanitarian compliance across Syria.",
+    tabPrivacy: "Privacy Policy",
+    tabTerms: "Terms of Contracting",
+    tabCompliance: "INGO Compliance",
+    btnRequestComplianceDossier: "Request Signed Due Diligence Package",
+    btnCloseLegalModal: "Close",
+
+    // Privacy Tab
+    privacyCard1Title: "Operational & Mission Data Confidentiality",
+    privacyCard1Desc: "Rammah Travel enforces strict information security protocols for all humanitarian (INGO), diplomatic, and commercial partners. Field mission movements, staff passenger manifests, logistics hubs, cargo specifications, and security focal point identities are treated as strictly confidential and never disclosed to unauthorized third parties.",
+    privacyCard2Title: "Data Collected & Purpose of Processing",
+    privacyCard2Desc: "Information collected via our Request for Proposal (RFQ) engine and contractual agreements (organization name, authorized focal point, official email, contact number, fleet selection, and operational governorate) is solely utilized for formulating technical/commercial proposals, drafting SLAs, and dispatching fleet assets.",
+    privacyCard3Title: "Audit Compliance & Retention Protocols",
+    privacyCard3Desc: "Vehicle logbooks, fuel receipts, and maintenance logs are archived in alignment with major international donor audit requirements (e.g., USAID, ECHO, FCDO, UN agencies) for statutory audit periods. Institutional partners may request permanent data expungement following final contract reconciliation.",
+    privacyHighlight: "Strict Non-Disclosure Guarantee: We never sell, monetize, or transfer partner operational data or mission itineraries under any circumstances.",
+
+    // Terms Tab
+    termsCard1Title: "Fleet Readiness & Technical Handover Standards",
+    termsCard1Desc: "Every vehicle (Hyundai H-1 passenger vans, Santa Fe 4WD, sedans) and logistics truck (Hyundai Porter light cargo, Hyundai Mighty heavy carrier) is handed over in pristine mechanical condition following a 100-point inspection. All vehicles feature certified air conditioning/heating, all-seat passenger safety belts, emergency medical kit, fire extinguisher, and spare tire.",
+    termsCard2Title: "Certified Driver Services & Self-Drive Options",
+    termsCard2Desc: "For contracts with drivers, our Syrian drivers are background-checked, certified in defensive driving, adhere strictly to a non-smoking policy inside vehicles, observe speed limits, and maintain mission confidentiality. For self-managed contracts, comprehensive joint handover checklists and clear fuel reconciliation protocols are provided.",
+    termsCard3Title: "24/7 Breakdown Assistance & Rapid Replacement Guarantee",
+    termsCard3Desc: "Preventative servicing, fluids, and mechanical maintenance are fully covered by Rammah Travel across all 14 Syrian governorates. In the event of a mechanical failure or field incident, an equivalent or upgraded replacement vehicle is dispatched immediately (< 2 hours in provincial capitals).",
+    termsCard4Title: "Logistics Labor Crews & Commercial Billing",
+    termsCard4Desc: "Optional certified loading and unloading labor crews are available for cargo trucks. Invoicing is issued on transparent monthly, weekly, or project-dedicated milestone terms with compliant commercial receipts and clear bank payment options.",
+    termsHighlight: "Uninterrupted Mission Guarantee: Instant backup fleet deployment guarantees your field operations and humanitarian response never face downtime.",
+
+    // Compliance Tab
+    complianceCard1Title: "Adherence to Core Humanitarian Principles",
+    complianceCard1Desc: "Rammah Travel firmly commits to the four Core Humanitarian Principles: Humanity, Neutrality, Impartiality, and Operational Independence. Fleet assets and drivers operate strictly for designated humanitarian, relief, or lawful commercial missions without discrimination.",
+    complianceCard2Title: "Anti-Bribery, Anti-Corruption & Zero Tolerance for Fraud",
+    complianceCard2Desc: "We maintain zero tolerance for bribery, facilitation payments, kickbacks, or fraudulent billing, aligning fully with the Foreign Corrupt Practices Act (FCPA), UK Bribery Act, and UN Global Compact standards. All billing is completely itemized and transparent.",
+    complianceCard3Title: "PSEA & Child Safeguarding Commitment",
+    complianceCard3Desc: "All personnel, drivers, and field crews sign and are legally bound by a strict Code of Conduct regarding Protection from Sexual Exploitation and Abuse (PSEA), harassment prohibition, and child safeguarding. Any breach results in immediate dismissal and referral to competent legal authorities.",
+    complianceCard4Title: "Fair Labor Standards & Driver Welfare",
+    complianceCard4Desc: "We enforce ethical labor practices: fair living wages, mandatory rest intervals (maximum 8 continuous driving hours per 24 hours), prohibition of child or forced labor, and full emergency medical insurance for all operational crews.",
+    complianceHighlight: "Donor Due Diligence Ready: Comprehensive supplier registration packages, tax registrations, safety certifications, and compliance questionnaires are immediately available for INGO procurement tenders.",
 
     // Mobile Quick Bar
     quickBarWhatsapp: "WhatsApp",
@@ -261,7 +305,7 @@ const translations = {
   ar: {
     // Top Bar
     topLocation: "مراكز تشغيل وأسطول تغطي كافة المحافظات السورية الـ 14",
-    topPhone: "هاتف وواتساب مباشر: 48 24 251 535 90+",
+    topPhone: "هاتف وواتساب مباشر: \u200E+963 949 555 207",
     topEmail: "info@rammah-trvl.com",
     topConcierge: "عقود أساطيل وشاحنات للمنظمات والشركات والجهات الحكومية",
 
@@ -492,7 +536,7 @@ const translations = {
     labelTargetGovernorate: "المحافظة السورية ونطاق العمل الأساسي",
     labelNotes: "تفاصيل ونطاق العمل الميداني / ملاحظات إضافية",
     placeholderNotes: "مثال: المحافظات المستهدفة، نوع البضاعة للشاحنات، الكيلومترات التقديرية، طبيعة المشروع...",
-    btnSubmitWhatsApp: "إرسال الطلب عبر واتساب (+90 535 251 24 48)",
+    btnSubmitWhatsApp: "إرسال الطلب عبر واتساب (+963 949 555 207)",
     btnSubmitEmail: "إرسال الطلب عبر البريد الإلكتروني (info@rammah-trvl.com)",
 
     // Footer
@@ -502,7 +546,51 @@ const translations = {
     footerColServices: "خدمات التعاقد",
     footerColContact: "التواصل والاستفسارات",
     footerAddress: "دمشق، الجمهورية العربية السورية • مراكز تشغيل تغطي كافة المحافظات الـ 14",
-    footerCopyright: "© 2026 شركة رماح ترافيل. جميع الحقوق محفوظة. عقود وتشغيل أساطيل المركبات والشاحنات في سوريا.",
+        footerCopyright: "© 2026 شركة رماح ترافيل. جميع الحقوق محفوظة. عقود وتشغيل أساطيل المركبات والشاحنات في سوريا.",
+    footerPrivacy: "سياسة الخصوصية",
+    footerTerms: "شروط وأحكام التعاقد",
+    footerCompliance: "معايير امتثال المنظمات (INGO)",
+
+    // Legal & Compliance Framework Modal
+    legalBadgePill: "المعايير التشغيلية المعتمدة لقطاع المنظمات والشركات",
+    legalModalTitle: "إطار التعاقد، الخصوصية ومعايير الامتثال للمنظمات",
+    legalModalSubtitle: "المعايير التشغيلية المعتمدة، سرية البيانات الميدانية، والتزام العمل الإنساني لشركة رماح ترافيل في سوريا.",
+    tabPrivacy: "سياسة الخصوصية وسرية البيانات",
+    tabTerms: "شروط التعاقد والتشغيل",
+    tabCompliance: "معايير الامتثال للمنظمات (INGO)",
+    btnRequestComplianceDossier: "طلب ملف الامتثال والوثائق الثبوتية",
+    btnCloseLegalModal: "إغلاق",
+
+    // Privacy Tab
+    privacyCard1Title: "سرية التحركات والبيانات الميدانية للمشاريع",
+    privacyCard1Desc: "تطبق شركة رماح ترافيل بروتوكولات صارمة لأمن المعلومات لشركائنا من المنظمات الإنسانية الدولية (INGOs)، البعثات الدبلوماسية، والشركات. تُعامل خطط التحركات الميدانية، قوائم ركاب الكوادر، مسارات القوافل الإغاثية، مواقع المستودعات، وبيانات مسؤولي الاتصال بسرية تامة ومطلقة دون أي مشاركة مع جهات غير مخولة.",
+    privacyCard2Title: "البيانات المجمعة وأغراض المعالجة التعاقدية",
+    privacyCard2Desc: "تُستخدم البيانات الواردة في طلبات عروض الأسعار (RFQ) وعقود التشغيل (اسم المنظمة، ممثل الجهة، البريد الرسمي، الهاتف/واتساب، فئات الأسطول المطلوبة، ونطاق المحافظات) حصراً لإعداد العروض الفنية والمالية، صياغة اتفاقيات مستوى الخدمة (SLA)، وتنسيق الإمداد والتشغيل الميداني المباشر.",
+    privacyCard3Title: "الامتثال لمتطلبات التدقيق الدولي وحفظ السجلات",
+    privacyCard3Desc: "تُحفظ سجلات حركة المركبات (Logbooks)، إيصالات الوقود، وجداول الصيانة الدورية بما يتوافق مع معايير التدقيق للمانحين الدوليين (مثل USAID، ECHO، FCDO، ووكالات الأمم المتحدة) للمدد القانونية المعتمدة، مع ضمان الإتلاف الآمن للبيانات عند انتهاء العقد بطلب خطي.",
+    privacyHighlight: "ضمان عدم الإفصاح المطلق: نلتزم بعدم بيع أو مشاركة أو تداول أي بيانات خاصة بتحركات الكوادر أو بضائع القوافل تحت أي ظرف كان.",
+
+    // Terms Tab
+    termsCard1Title: "معايير الجاهزية والتسليم الفني للأسطول",
+    termsCard1Desc: "تُسلم كافة المركبات (فانات هيونداي H-1، سنتافيه 4WD، وسيارات السيدان) وشاحنات النقل اللوجستي (هيونداي بورتر ومايتي) بحالة فنية وميكانيكية ممتازة بعد فحص شامل لـ 100 نقطة أمان. تتضمن تجهيزات التكييف والتبريد الفعال، أحزمة أمان لكافة المقاعد، حقيبة إسعاف أولي، مطفأة حريق معتمدة، وعجلة احتياطية جاهزة.",
+    termsCard2Title: "خدمات السائقين المعتمدين وخيارات التشغيل الذاتي",
+    termsCard2Desc: "في العقود مع سائقين، يتم اختيار سائقين سوريين محترفين خضعوا لفحص أمني واختبارات قيادة وقائية، مع التزام تام بعدم التدخين داخل المركبة، الالتزام بالسرعات القانونية، وحفظ السرية. وفي عقود التشغيل الذاتي بدون سائق، يُجرى محضر استلام وتسليم تفصيلي مشترك مع توثيق كميات الوقود.",
+    termsCard3Title: "مساعدة على الطرقات 24/7 وضمان الاستبدال الفوري",
+    termsCard3Desc: "تغطي رماح ترافيل بالكامل الصيانة الدورية وتغيير الزيوت وقطع الغيار الاستهلاكية في عموم المحافظات السورية الـ 14. في حال حدوث أي عطل ميكانيكي أو طارئ على الطريق، يتم توفير مركبة بديلة من نفس الفئة أو أعلى فوراً (خلال أقل من ساعتين في مراكز المحافظات).",
+    termsCard4Title: "طواقم عمال التحميل والفوترة التجارية الرسمية",
+    termsCard4Desc: "نوفر طواقم عمال تحميل وتنزيل مدربين للشاحنات مع تغطية تأمينية. وتصدر الفواتير الشهرية وفق معايير واضحة (عقود شهرية، أسبوعية، أو مهمات محددة) مع وصولات وإشعارات رسمية وإمكانية الدفع والتحويل البنكي المعتمد.",
+    termsHighlight: "ضمان استمرارية المهمة: جاهزية الأسطول البديل تضمن عدم انقطاع استجابتكم الإنسانية أو مهامكم الميدانية في أي محافظة سورية.",
+
+    // Compliance Tab
+    complianceCard1Title: "الالتزام بالمبادئ الإنسانية الأساسية",
+    complianceCard1Desc: "تلتزم شركة رماح ترافيل التزاماً راسخاً بالمبادئ الإنسانية الأربعة: الإنسانية، الحياد، النزاهة، والاستقلالية التشغيلية. وتعمل أساطيلنا وسائقونا على تيسير المهام الإغاثية والإنسانية والتنموية والمهمات التجارية المشروعة دون أي تمييز.",
+    complianceCard2Title: "مكافحة الرشوة والفساد والنزاهة المالية",
+    complianceCard2Desc: "نتبع سياسة صارمة تنص على عدم التسامح مطلقاً مع أي شكل من أشكال الرشوة، المدفوعات التيسيرية، العمولات السرية، أو الاحتيال المالي، بما يتفق مع القوانين الدولية (FCPA والمملكة المتحدة لمكافحة الرشوة ومبادئ الميثاق العالمي للأمم المتحدة). كافة معاملاتنا المالية موثقة وشفافة.",
+    complianceCard3Title: "الحماية من الاستغلال والاعتداء الجنسي (PSEA) وحماية الطفل",
+    complianceCard3Desc: "يوقع كافة موظفي وسائقي وفرق عمال رماح ترافيل على مدونة سلوك ملزمة قانونياً وصارمة تنص على الحماية من الاستغلال والاعتداء الجنسي (PSEA)، منع التحرش، وصون حقوق الطفل. يُفصل أي مخالف فوراً ويُحال للجهات المختصة.",
+    complianceCard4Title: "معايير العمل العادل ورعاية الكوادر والسائقين",
+    complianceCard4Desc: "نطبق ممارسات عمل عادلة تشمل أجوراً مجزية، وساعات عمل محددة بما يضمن فترات راحة إلزامية (حد أقصى 8 ساعات قيادة مستمرة يومياً)، مع حظر تشغيل الأطفال أو العمل القسري، وتوفير تأمين طبي في حالات الطوارئ والحوادث لكافة السائقين والعمال.",
+    complianceHighlight: "ملف امتثال جاهز للمناقصات: ملفات التسجيل التجاري، السجل الضريبي، شهادات الأمان، وقوائم الفحص والامتثال جاهزة للتسليم الفوري لفرق المشتريات والعقود في المنظمات والجهات الرسمية.",
 
     // Mobile Quick Bar
     quickBarWhatsapp: "واتساب مباشر",

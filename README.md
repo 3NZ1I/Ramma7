@@ -73,7 +73,7 @@ Featured with dark luxury frosted glass showcase badges (`.partner-showcase-plat
 
 ## 📞 Contact Information / معلومات التواصل
 - **Email**: [info@rammah-trvl.com](mailto:info@rammah-trvl.com)
-- **Phone / WhatsApp**: [+90 535 251 24 48](https://wa.me/905352512448)
+- **Phone / WhatsApp**: [+963 949 555 207](https://wa.me/963949555207)
 - **Operating Centers**: Damascus, Aleppo, Coast & All 14 Syrian Governorates.
 
 ---
@@ -83,10 +83,28 @@ A seamless, synchronized quotation pipeline connecting the Hero quick booking ba
 - **Instant Pre-fill Pipeline**: When a client selects their preferences in the quick booking bar (Service category tabs, contract duration, entity type, vehicle model, and operational governorate) and clicks **إرسال طلب استدراج عروض / Send RFQ Request**, the modal automatically opens pre-filled with all selected criteria.
 - **Dedicated "Not Applicable" (N/A) Cargo Labor Option**: Clients can explicitly select "غير منطبق / Not Applicable" for the cargo loading & unloading labor crew (`modalLaborPref`), with smart auto-selection depending on whether a cargo truck or passenger vehicle is selected.
 - **Dual Direct Submission Channels**:
-  1. **WhatsApp Direct Dispatch (`+90 535 251 24 48`)**: Compiles all organization details, focal point contact, fleet specs, driver preference, labor crew, operational governorate, and field comments into an elegantly structured, emoji-bulleted message.
+  1. **WhatsApp Direct Dispatch (`+963 949 555 207`)**: Compiles all organization details, focal point contact, fleet specs, driver preference, labor crew, operational governorate, and field comments into an elegantly structured, emoji-bulleted message.
   2. **Official Email Dispatch (`info@rammah-trvl.com`)**: Automatically generates a formal bilingual email subject and comprehensive commercial inquiry body ready to send in the client's mail application.
 - **Strict Language Awareness**: Automatically forwards messages in professional, formal **Arabic** when browsing in Arabic, or in formal **English** when browsing in English.
 - **Client-Side Validation & Feedback**: Ensures required fields (Organization, Contact Person, Phone, Email) are complete with inline glowing error highlights and smooth success status notifications.
+
+---
+
+## 🛡️ Legal, Contracting & INGO Compliance Framework / إطار التعاقد، الخصوصية والامتثال للمنظمات
+A fully bilingual, interactive regulatory and operational framework accessible directly from the footer navigation across all devices:
+- **Privacy Policy & Operational Confidentiality (سياسة الخصوصية وسرية البيانات الميدانية)**:
+  - Enforces strict data confidentiality for humanitarian INGO missions, staff passenger manifests, relief delivery coordinates, logistics warehousing hubs, and focal point contact channels.
+  - Aligned with international humanitarian data protection and donor audit retention standards (USAID, ECHO, FCDO, UN agencies).
+- **Terms of Contracting & Field Operations (شروط وأحكام التعاقد والتشغيل الميداني)**:
+  - Comprehensive 100-point vehicle handover inspection standards for all Hyundai passenger vans, Santa Fe 4WDs, sedans, and commercial cargo trucks (Porter & Mighty).
+  - 24/7 breakdown assistance and rapid replacement guarantee (< 2 hours in provincial capitals) across all 14 Syrian governorates.
+  - Dedicated certified driver protocols (defensive driving certified, background-checked, non-smoking, speed limits) and self-managed fleet handover checklists.
+  - Certified cargo handling crews and structured, audit-ready milestone billing.
+- **INGO Compliance & Humanitarian Standards (دليل الامتثال والمعايير الإنسانية الدولية)**:
+  - Strict adherence to the Core Humanitarian Principles (Humanity, Neutrality, Impartiality, Independence).
+  - Anti-Bribery, Anti-Corruption, and Zero Tolerance for Fraud (FCPA & UK Bribery Act aligned).
+  - Protection from Sexual Exploitation and Abuse (PSEA) and Child Safeguarding Code of Conduct signed by all fleet personnel.
+  - Fair labor practices, living wages, driver rest regulations, and immediate tender-ready due diligence registration packages.
 
 ---
 
